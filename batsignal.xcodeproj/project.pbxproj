@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		86580DE11728761900A96F4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580DE01728761900A96F4E /* UIKit.framework */; };
+		86580DE31728761900A96F4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580DE21728761900A96F4E /* Foundation.framework */; };
+		86580DE51728761900A96F4E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580DE41728761900A96F4E /* CoreGraphics.framework */; };
+		86580DE71728761900A96F4E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580DE61728761900A96F4E /* CoreData.framework */; };
+		86580DED1728761900A96F4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86580DEB1728761900A96F4E /* InfoPlist.strings */; };
+		86580DEF1728761900A96F4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86580DEE1728761900A96F4E /* main.m */; };
+		86580DF31728761900A96F4E /* BSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86580DF21728761900A96F4E /* BSAppDelegate.m */; };
+		86580DF51728761900A96F4E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 86580DF41728761900A96F4E /* Default.png */; };
+		86580DF71728761900A96F4E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86580DF61728761900A96F4E /* Default@2x.png */; };
+		86580DF91728761900A96F4E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86580DF81728761900A96F4E /* Default-568h@2x.png */; };
+		86580DFC1728761900A96F4E /* batsignal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86580DFA1728761900A96F4E /* batsignal.xcdatamodeld */; };
+		86580E041728761900A96F4E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580E031728761900A96F4E /* SenTestingKit.framework */; };
+		86580E051728761900A96F4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580DE01728761900A96F4E /* UIKit.framework */; };
+		86580E061728761900A96F4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580DE21728761900A96F4E /* Foundation.framework */; };
+		86580E071728761900A96F4E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580DE61728761900A96F4E /* CoreData.framework */; };
+		86580E0F1728761A00A96F4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86580E0D1728761A00A96F4E /* InfoPlist.strings */; };
+		86580E121728761A00A96F4E /* batsignalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86580E111728761A00A96F4E /* batsignalTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86580E081728761A00A96F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86580DD51728761900A96F4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86580DDC1728761900A96F4E;
+			remoteInfo = batsignal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		86580DDD1728761900A96F4E /* batsignal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = batsignal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86580DE01728761900A96F4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		86580DE21728761900A96F4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		86580DE41728761900A96F4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		86580DE61728761900A96F4E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		86580DEA1728761900A96F4E /* batsignal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "batsignal-Info.plist"; sourceTree = "<group>"; };
+		86580DEC1728761900A96F4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		86580DEE1728761900A96F4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		86580DF01728761900A96F4E /* batsignal-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "batsignal-Prefix.pch"; sourceTree = "<group>"; };
+		86580DF11728761900A96F4E /* BSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSAppDelegate.h; sourceTree = "<group>"; };
+		86580DF21728761900A96F4E /* BSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSAppDelegate.m; sourceTree = "<group>"; };
+		86580DF41728761900A96F4E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		86580DF61728761900A96F4E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		86580DF81728761900A96F4E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		86580DFB1728761900A96F4E /* batsignal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = batsignal.xcdatamodel; sourceTree = "<group>"; };
+		86580E021728761900A96F4E /* batsignalTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = batsignalTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86580E031728761900A96F4E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		86580E0C1728761A00A96F4E /* batsignalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "batsignalTests-Info.plist"; sourceTree = "<group>"; };
+		86580E0E1728761A00A96F4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		86580E101728761A00A96F4E /* batsignalTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = batsignalTests.h; sourceTree = "<group>"; };
+		86580E111728761A00A96F4E /* batsignalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = batsignalTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86580DDA1728761900A96F4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86580DE11728761900A96F4E /* UIKit.framework in Frameworks */,
+				86580DE31728761900A96F4E /* Foundation.framework in Frameworks */,
+				86580DE51728761900A96F4E /* CoreGraphics.framework in Frameworks */,
+				86580DE71728761900A96F4E /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86580DFE1728761900A96F4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86580E041728761900A96F4E /* SenTestingKit.framework in Frameworks */,
+				86580E051728761900A96F4E /* UIKit.framework in Frameworks */,
+				86580E061728761900A96F4E /* Foundation.framework in Frameworks */,
+				86580E071728761900A96F4E /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		86580DD41728761900A96F4E = {
+			isa = PBXGroup;
+			children = (
+				86580DE81728761900A96F4E /* batsignal */,
+				86580E0A1728761A00A96F4E /* batsignalTests */,
+				86580DDF1728761900A96F4E /* Frameworks */,
+				86580DDE1728761900A96F4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		86580DDE1728761900A96F4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86580DDD1728761900A96F4E /* batsignal.app */,
+				86580E021728761900A96F4E /* batsignalTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86580DDF1728761900A96F4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86580DE01728761900A96F4E /* UIKit.framework */,
+				86580DE21728761900A96F4E /* Foundation.framework */,
+				86580DE41728761900A96F4E /* CoreGraphics.framework */,
+				86580DE61728761900A96F4E /* CoreData.framework */,
+				86580E031728761900A96F4E /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86580DE81728761900A96F4E /* batsignal */ = {
+			isa = PBXGroup;
+			children = (
+				86580DF11728761900A96F4E /* BSAppDelegate.h */,
+				86580DF21728761900A96F4E /* BSAppDelegate.m */,
+				86580DFA1728761900A96F4E /* batsignal.xcdatamodeld */,
+				86580DE91728761900A96F4E /* Supporting Files */,
+			);
+			path = batsignal;
+			sourceTree = "<group>";
+		};
+		86580DE91728761900A96F4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				86580DEA1728761900A96F4E /* batsignal-Info.plist */,
+				86580DEB1728761900A96F4E /* InfoPlist.strings */,
+				86580DEE1728761900A96F4E /* main.m */,
+				86580DF01728761900A96F4E /* batsignal-Prefix.pch */,
+				86580DF41728761900A96F4E /* Default.png */,
+				86580DF61728761900A96F4E /* Default@2x.png */,
+				86580DF81728761900A96F4E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86580E0A1728761A00A96F4E /* batsignalTests */ = {
+			isa = PBXGroup;
+			children = (
+				86580E101728761A00A96F4E /* batsignalTests.h */,
+				86580E111728761A00A96F4E /* batsignalTests.m */,
+				86580E0B1728761A00A96F4E /* Supporting Files */,
+			);
+			path = batsignalTests;
+			sourceTree = "<group>";
+		};
+		86580E0B1728761A00A96F4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				86580E0C1728761A00A96F4E /* batsignalTests-Info.plist */,
+				86580E0D1728761A00A96F4E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86580DDC1728761900A96F4E /* batsignal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86580E151728761A00A96F4E /* Build configuration list for PBXNativeTarget "batsignal" */;
+			buildPhases = (
+				86580DD91728761900A96F4E /* Sources */,
+				86580DDA1728761900A96F4E /* Frameworks */,
+				86580DDB1728761900A96F4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = batsignal;
+			productName = batsignal;
+			productReference = 86580DDD1728761900A96F4E /* batsignal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		86580E011728761900A96F4E /* batsignalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86580E181728761A00A96F4E /* Build configuration list for PBXNativeTarget "batsignalTests" */;
+			buildPhases = (
+				86580DFD1728761900A96F4E /* Sources */,
+				86580DFE1728761900A96F4E /* Frameworks */,
+				86580DFF1728761900A96F4E /* Resources */,
+				86580E001728761900A96F4E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86580E091728761A00A96F4E /* PBXTargetDependency */,
+			);
+			name = batsignalTests;
+			productName = batsignalTests;
+			productReference = 86580E021728761900A96F4E /* batsignalTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86580DD51728761900A96F4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Kyle Warren";
+			};
+			buildConfigurationList = 86580DD81728761900A96F4E /* Build configuration list for PBXProject "batsignal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 86580DD41728761900A96F4E;
+			productRefGroup = 86580DDE1728761900A96F4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86580DDC1728761900A96F4E /* batsignal */,
+				86580E011728761900A96F4E /* batsignalTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86580DDB1728761900A96F4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86580DED1728761900A96F4E /* InfoPlist.strings in Resources */,
+				86580DF51728761900A96F4E /* Default.png in Resources */,
+				86580DF71728761900A96F4E /* Default@2x.png in Resources */,
+				86580DF91728761900A96F4E /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86580DFF1728761900A96F4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86580E0F1728761A00A96F4E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86580E001728761900A96F4E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86580DD91728761900A96F4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86580DEF1728761900A96F4E /* main.m in Sources */,
+				86580DF31728761900A96F4E /* BSAppDelegate.m in Sources */,
+				86580DFC1728761900A96F4E /* batsignal.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86580DFD1728761900A96F4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86580E121728761A00A96F4E /* batsignalTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86580E091728761A00A96F4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86580DDC1728761900A96F4E /* batsignal */;
+			targetProxy = 86580E081728761A00A96F4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		86580DEB1728761900A96F4E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86580DEC1728761900A96F4E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		86580E0D1728761A00A96F4E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86580E0E1728761A00A96F4E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		86580E131728761A00A96F4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86580E141728761A00A96F4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		86580E161728761A00A96F4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "batsignal/batsignal-Prefix.pch";
+				INFOPLIST_FILE = "batsignal/batsignal-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		86580E171728761A00A96F4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "batsignal/batsignal-Prefix.pch";
+				INFOPLIST_FILE = "batsignal/batsignal-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		86580E191728761A00A96F4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/batsignal.app/batsignal";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "batsignal/batsignal-Prefix.pch";
+				INFOPLIST_FILE = "batsignalTests/batsignalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		86580E1A1728761A00A96F4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/batsignal.app/batsignal";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "batsignal/batsignal-Prefix.pch";
+				INFOPLIST_FILE = "batsignalTests/batsignalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		86580DD81728761900A96F4E /* Build configuration list for PBXProject "batsignal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86580E131728761A00A96F4E /* Debug */,
+				86580E141728761A00A96F4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86580E151728761A00A96F4E /* Build configuration list for PBXNativeTarget "batsignal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86580E161728761A00A96F4E /* Debug */,
+				86580E171728761A00A96F4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		86580E181728761A00A96F4E /* Build configuration list for PBXNativeTarget "batsignalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86580E191728761A00A96F4E /* Debug */,
+				86580E1A1728761A00A96F4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		86580DFA1728761900A96F4E /* batsignal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				86580DFB1728761900A96F4E /* batsignal.xcdatamodel */,
+			);
+			currentVersion = 86580DFB1728761900A96F4E /* batsignal.xcdatamodel */;
+			path = batsignal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 86580DD51728761900A96F4E /* Project object */;
+}
