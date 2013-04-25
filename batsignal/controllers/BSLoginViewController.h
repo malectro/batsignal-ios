@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class BSLoginView;
+
 @interface BSLoginViewController : UIViewController
+
+@property (nonatomic) BSLoginView *loginView;
 
 @end

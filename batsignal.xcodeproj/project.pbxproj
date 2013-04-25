@@ -27,6 +27,7 @@
 		86B4BE7817297BB10009A090 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE7717297BB10009A090 /* Twitter.framework */; };
 		86B4BE7C17297C280009A090 /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7B17297C280009A090 /* BSLoginViewController.m */; };
 		86B4BE8017297C530009A090 /* BSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7F17297C530009A090 /* BSLoginView.m */; };
+		86B4BE82172980B20009A090 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE81172980B20009A090 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		86B4BE7B17297C280009A090 /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginViewController.m; path = controllers/BSLoginViewController.m; sourceTree = "<group>"; };
 		86B4BE7E17297C530009A090 /* BSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoginView.h; path = views/BSLoginView.h; sourceTree = "<group>"; };
 		86B4BE7F17297C530009A090 /* BSLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginView.m; path = views/BSLoginView.m; sourceTree = "<group>"; };
+		86B4BE81172980B20009A090 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B4BE82172980B20009A090 /* Social.framework in Frameworks */,
 				86B4BE7817297BB10009A090 /* Twitter.framework in Frameworks */,
 				86580DE11728761900A96F4E /* UIKit.framework in Frameworks */,
 				86580DE31728761900A96F4E /* Foundation.framework in Frameworks */,
@@ -98,6 +101,7 @@
 		86580DD41728761900A96F4E = {
 			isa = PBXGroup;
 			children = (
+				86B4BE81172980B20009A090 /* Social.framework */,
 				86B4BE7717297BB10009A090 /* Twitter.framework */,
 				86580DE81728761900A96F4E /* batsignal */,
 				86580E0A1728761A00A96F4E /* batsignalTests */,

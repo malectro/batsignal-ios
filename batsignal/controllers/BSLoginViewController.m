@@ -27,19 +27,25 @@
 
 - (void)loadView
 {
-    self.view = [[BSLoginView alloc] init];
+    self.view = self.loginView = [[BSLoginView alloc] init];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    [self.loginView.twitterLoginButton addTarget:self action:@selector(twitterLogin) forControlEvents:UIControlEventTouchDown];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)twitterLogin
+{
+    
 }
 
 @end
