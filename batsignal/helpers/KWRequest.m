@@ -6,9 +6,8 @@
 //  Copyright (c) 2013 Kyle Warren. All rights reserved.
 //
 
-#import "UBRequest.h"
+#import "KWRequest.h"
 
-#import "UBUser.h"
 #import "Reachability.h"
 
 #define kHostName @"http://localhost:3000"
