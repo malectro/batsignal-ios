@@ -30,6 +30,7 @@
 		86B4BE82172980B20009A090 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE81172980B20009A090 /* Social.framework */; };
 		86B4BE861729B0860009A090 /* BSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE851729B0860009A090 /* BSSession.m */; };
 		86B4BE891729B70B0009A090 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE881729B70B0009A090 /* Reachability.m */; };
+		86B4BE8C1729B7420009A090 /* KWRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE8B1729B7420009A090 /* KWRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		86B4BE851729B0860009A090 /* BSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSSession.m; path = helpers/BSSession.m; sourceTree = "<group>"; };
 		86B4BE871729B70B0009A090 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = helpers/Reachability.h; sourceTree = "<group>"; };
 		86B4BE881729B70B0009A090 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = helpers/Reachability.m; sourceTree = "<group>"; };
+		86B4BE8A1729B7420009A090 /* KWRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KWRequest.h; path = helpers/KWRequest.h; sourceTree = "<group>"; };
+		86B4BE8B1729B7420009A090 /* KWRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KWRequest.m; path = helpers/KWRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,8 @@
 				86B4BE851729B0860009A090 /* BSSession.m */,
 				86B4BE871729B70B0009A090 /* Reachability.h */,
 				86B4BE881729B70B0009A090 /* Reachability.m */,
+				86B4BE8A1729B7420009A090 /* KWRequest.h */,
+				86B4BE8B1729B7420009A090 /* KWRequest.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				86B4BE8017297C530009A090 /* BSLoginView.m in Sources */,
 				86B4BE861729B0860009A090 /* BSSession.m in Sources */,
 				86B4BE891729B70B0009A090 /* Reachability.m in Sources */,
+				86B4BE8C1729B7420009A090 /* KWRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
