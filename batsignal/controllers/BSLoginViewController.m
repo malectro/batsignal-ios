@@ -9,6 +9,7 @@
 #import "BSLoginViewController.h"
 
 #import "BSLoginView.h"
+#import "BSSession.h"
 
 @interface BSLoginViewController ()
 

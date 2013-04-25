@@ -28,6 +28,7 @@
 		86B4BE7C17297C280009A090 /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7B17297C280009A090 /* BSLoginViewController.m */; };
 		86B4BE8017297C530009A090 /* BSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7F17297C530009A090 /* BSLoginView.m */; };
 		86B4BE82172980B20009A090 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE81172980B20009A090 /* Social.framework */; };
+		86B4BE861729B0860009A090 /* BSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE851729B0860009A090 /* BSSession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		86B4BE7E17297C530009A090 /* BSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoginView.h; path = views/BSLoginView.h; sourceTree = "<group>"; };
 		86B4BE7F17297C530009A090 /* BSLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginView.m; path = views/BSLoginView.m; sourceTree = "<group>"; };
 		86B4BE81172980B20009A090 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		86B4BE841729B0860009A090 /* BSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSSession.h; path = helpers/BSSession.h; sourceTree = "<group>"; };
+		86B4BE851729B0860009A090 /* BSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSSession.m; path = helpers/BSSession.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,7 @@
 		86580DE81728761900A96F4E /* batsignal */ = {
 			isa = PBXGroup;
 			children = (
+				86B4BE831729B0550009A090 /* Helpers */,
 				86B4BE7D17297C360009A090 /* Views */,
 				86B4BE7917297C0A0009A090 /* Controllers */,
 				86580DF11728761900A96F4E /* BSAppDelegate.h */,
@@ -193,6 +197,15 @@
 				86B4BE7F17297C530009A090 /* BSLoginView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		86B4BE831729B0550009A090 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				86B4BE841729B0860009A090 /* BSSession.h */,
+				86B4BE851729B0860009A090 /* BSSession.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +323,7 @@
 				86580DFC1728761900A96F4E /* batsignal.xcdatamodeld in Sources */,
 				86B4BE7C17297C280009A090 /* BSLoginViewController.m in Sources */,
 				86B4BE8017297C530009A090 /* BSLoginView.m in Sources */,
+				86B4BE861729B0860009A090 /* BSSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
