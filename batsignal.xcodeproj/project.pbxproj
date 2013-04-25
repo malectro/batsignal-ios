@@ -24,6 +24,9 @@
 		86580E071728761900A96F4E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580DE61728761900A96F4E /* CoreData.framework */; };
 		86580E0F1728761A00A96F4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86580E0D1728761A00A96F4E /* InfoPlist.strings */; };
 		86580E121728761A00A96F4E /* batsignalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86580E111728761A00A96F4E /* batsignalTests.m */; };
+		86B4BE7817297BB10009A090 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE7717297BB10009A090 /* Twitter.framework */; };
+		86B4BE7C17297C280009A090 /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7B17297C280009A090 /* BSLoginViewController.m */; };
+		86B4BE8017297C530009A090 /* BSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7F17297C530009A090 /* BSLoginView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,11 @@
 		86580E0E1728761A00A96F4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		86580E101728761A00A96F4E /* batsignalTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = batsignalTests.h; sourceTree = "<group>"; };
 		86580E111728761A00A96F4E /* batsignalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = batsignalTests.m; sourceTree = "<group>"; };
+		86B4BE7717297BB10009A090 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		86B4BE7A17297C280009A090 /* BSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoginViewController.h; path = controllers/BSLoginViewController.h; sourceTree = "<group>"; };
+		86B4BE7B17297C280009A090 /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginViewController.m; path = controllers/BSLoginViewController.m; sourceTree = "<group>"; };
+		86B4BE7E17297C530009A090 /* BSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoginView.h; path = views/BSLoginView.h; sourceTree = "<group>"; };
+		86B4BE7F17297C530009A090 /* BSLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginView.m; path = views/BSLoginView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B4BE7817297BB10009A090 /* Twitter.framework in Frameworks */,
 				86580DE11728761900A96F4E /* UIKit.framework in Frameworks */,
 				86580DE31728761900A96F4E /* Foundation.framework in Frameworks */,
 				86580DE51728761900A96F4E /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +98,7 @@
 		86580DD41728761900A96F4E = {
 			isa = PBXGroup;
 			children = (
+				86B4BE7717297BB10009A090 /* Twitter.framework */,
 				86580DE81728761900A96F4E /* batsignal */,
 				86580E0A1728761A00A96F4E /* batsignalTests */,
 				86580DDF1728761900A96F4E /* Frameworks */,
@@ -120,6 +130,8 @@
 		86580DE81728761900A96F4E /* batsignal */ = {
 			isa = PBXGroup;
 			children = (
+				86B4BE7D17297C360009A090 /* Views */,
+				86B4BE7917297C0A0009A090 /* Controllers */,
 				86580DF11728761900A96F4E /* BSAppDelegate.h */,
 				86580DF21728761900A96F4E /* BSAppDelegate.m */,
 				86580DFA1728761900A96F4E /* batsignal.xcdatamodeld */,
@@ -159,6 +171,24 @@
 				86580E0D1728761A00A96F4E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86B4BE7917297C0A0009A090 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				86B4BE7A17297C280009A090 /* BSLoginViewController.h */,
+				86B4BE7B17297C280009A090 /* BSLoginViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		86B4BE7D17297C360009A090 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86B4BE7E17297C530009A090 /* BSLoginView.h */,
+				86B4BE7F17297C530009A090 /* BSLoginView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +304,8 @@
 				86580DEF1728761900A96F4E /* main.m in Sources */,
 				86580DF31728761900A96F4E /* BSAppDelegate.m in Sources */,
 				86580DFC1728761900A96F4E /* batsignal.xcdatamodeld in Sources */,
+				86B4BE7C17297C280009A090 /* BSLoginViewController.m in Sources */,
+				86B4BE8017297C530009A090 /* BSLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +480,7 @@
 				86580E171728761A00A96F4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86580E181728761A00A96F4E /* Build configuration list for PBXNativeTarget "batsignalTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +489,7 @@
 				86580E1A1728761A00A96F4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
