@@ -45,12 +45,16 @@
             if (granted) {
                 NSArray *accounts = [self.accountStore accountsWithAccountType:accountType];
                 self.twitterAccount = [accounts lastObject];
+                
+                NSLog(@"Logged in with %@ %@ %@", self.twitterAccount.username, self.twitterAccount.credential, self.twitterAccount.identifier);
             } else {
                 // access not granted :(
+                NSLog(@"Access denied");
             }
         }];
     } else {
         // not available :(
+        NSLog(@"No accounts available");
     }
 }
 

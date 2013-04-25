@@ -16,4 +16,6 @@
 
 + (BSSession *)defaultSession;
 
+- (void)auth;
+
 @end

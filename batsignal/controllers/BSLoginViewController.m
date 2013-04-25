@@ -46,7 +46,7 @@
 
 - (void)twitterLogin
 {
-    
+    [[BSSession defaultSession] auth];
 }
 
 @end
