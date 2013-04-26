@@ -1,5 +1,5 @@
 //
-//  UBRequest.m
+//  KWRequest.m
 //  Unison Brain
 //
 //  Created by Kyle Warren on 2/10/13.
@@ -12,7 +12,7 @@
 
 #define kHostName @"http://localhost:3000"
 
-@interface UBRequest ()
+@interface KWRequest ()
 
 @property (nonatomic) Reachability *reachable;
 @property (nonatomic) NSOperationQueue *operationQueue;
@@ -20,14 +20,14 @@
 
 @end
 
-@implementation UBRequest
+@implementation KWRequest
 
-+ (UBRequest *)ubr
++ (KWRequest *)kwr
 {
-    static UBRequest *requester = nil;
+    static KWRequest *requester = nil;
     
     if (requester == nil) {
-        requester = [[UBRequest alloc] init];
+        requester = [[KWRequest alloc] init];
     }
     
     return requester;
@@ -35,17 +35,17 @@
 
 + (void)get:(NSString *)path callback:(void (^)(id))handler
 {
-    [[self ubr] get:path callback:handler];
+    [[self kwr] get:path callback:handler];
 }
 
 + (void)post:(NSString *)path data:(NSDictionary *)dataDict callback:(void (^)(id))handler
 {
-    [[self ubr] post:path data:dataDict callback:handler];
+    [[self kwr] post:path data:dataDict callback:handler];
 }
 
 + (void)put:(NSString *)path data:(NSDictionary *)dataDict callback:(void (^)(id))handler
 {
-    [[self ubr] put:path data:dataDict callback:handler];
+    [[self kwr] put:path data:dataDict callback:handler];
 }
 
 - (id)init
@@ -103,7 +103,7 @@
     [self request:path method:@"PUT" data:data callback:handler];
 }
 
-- (void)request:(NSString *)path method:(NSString *)method data:(NSData *)data callback:(void (^)(id))callback
+- (void)requestData:(NSString *)path method:(NSString *)method data:(NSData *)data callback:(void (^)(id))callback
 {
     path = [path stringByAppendingString:@".json"];
     
@@ -118,16 +118,25 @@
     }
     
     [NSURLConnection sendAsynchronousRequest:request queue:_operationQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        id jsonObject = nil;
-        
-        if (data == nil) {
-            // not connected!
-        }
-        else {
-            jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        }
-        
         if (callback != nil) {
+            callback(data);
+        }
+    }];
+}
+
+- (void)request:(NSString *)path method:(NSString *)method data:(NSData *)data callback:(void (^)(id))callback
+{    
+    [self requestData:path method:method data:data callback:^(id data) {
+        if (callback != nil) {
+            id jsonObject = nil;
+            
+            if (data == nil) {
+                // not connected!
+            }
+            else {
+                jsonObject = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            }
+            
             callback(jsonObject);
         }
     }];

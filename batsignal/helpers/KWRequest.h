@@ -1,5 +1,5 @@
 //
-//  UBRequest.h
+//  KWRequest.h
 //  Unison Brain
 //
 //  Created by Kyle Warren on 2/10/13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UBRequest : NSObject
+@interface KWRequest : NSObject
 
 + (void)get:(NSString *)path callback:(void (^)(id)) handler;
 + (void)post:(NSString *)path data:(NSDictionary *)dataDict callback:(void (^)(id)) handler;
