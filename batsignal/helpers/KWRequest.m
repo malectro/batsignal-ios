@@ -107,7 +107,7 @@
 {
     path = [path stringByAppendingString:@".json"];
     
-    NSURL *url = [_baseUrl URLByAppendingPathComponent:path];
+    NSURL *url = [[NSURL alloc] initWithString:path relativeToURL:_baseUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod = method;
     

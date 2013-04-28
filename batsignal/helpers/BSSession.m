@@ -52,18 +52,36 @@
                 
                 NSLog(@"Logged in with %@ %@ %@", self.twitterAccount.username, self.twitterAccount.credential, self.twitterAccount.identifier);
                 
+                [TWAPIManager registerTwitterAppKey:@"YtG2yx3ltHAFx7RtXtKoA" andAppSecret:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"TWITTER_SECRET"]];
+                [TWAPIManager performReverseAuthForAccount:self.twitterAccount withHandler:^(NSData *responseData, NSError *error) {
+                    NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+                    NSString *path = [NSString stringWithFormat:@"/auth/twitter_reverse/callback?%@", string];
+                    
+                    [KWRequest get:path callback:^(id response) {
+                        NSLog(@"response %@", response);
+                    }];
+                    
+                    NSLog(@"got the creds %@", string);
+                }];
+                
+                return;
+                
                 [KWRequest get:@"/twitter_reverse_auth_token" callback:^(NSDictionary *data) {
                     if (data) {
                         NSString *signedReverseAuthSig = data[@"sig"];
                         
+                        NSLog(@"sig %@", signedReverseAuthSig);
+                        
                         // step 2
                         NSDictionary *params = @{@"x_reverse_auth_target": @"YtG2yx3ltHAFx7RtXtKoA",
                                                  @"x_reverse_auth_parameters": signedReverseAuthSig};
+                        
                         NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/oauth/access_token"];
                         SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
-                                           requestMethod:SLRequestMethodPOST
-                                                     URL:url
-                                              parameters:params];
+                                                                requestMethod:SLRequestMethodPOST
+                                                                          URL:url
+                                                                   parameters:params];
+                        
                         
                         [request setAccount:self.twitterAccount];
                         [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
