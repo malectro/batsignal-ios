@@ -22,6 +22,8 @@
 @property (readonly, nonatomic) BSMainViewController *mainViewController;
 @property (readonly, nonatomic) BSLoginViewController *loginViewController;
 
++ (NSManagedObjectContext *)moc;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

@@ -49,7 +49,7 @@
 + (NSFetchRequest *)modelRequest
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:[self modelName] inManagedObjectContext:[UBAppDelegate moc]];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:[self modelName] inManagedObjectContext:[BSAppDelegate moc]];
     
     fetchRequest.entity = entity;
     
@@ -59,7 +59,7 @@
 + (NSArray *)modelResults:(NSFetchRequest *)fetchRequest
 {
     NSError *error = nil;
-    NSArray *results = [[UBAppDelegate moc] executeFetchRequest:fetchRequest error:&error];
+    NSArray *results = [[BSAppDelegate moc] executeFetchRequest:fetchRequest error:&error];
     
     if (results == nil) {
         NSLog(@"Error %@: Fetch request failed", [self modelName]);
@@ -88,10 +88,10 @@
 
 + (KWModel *)create
 {
-    KWModel *model = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[UBAppDelegate moc]];
+    KWModel *model = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[BSAppDelegate moc]];
     
     // set the unique mongo bson objectId
-    model.id = [UBBson bsonId];
+    model.id = [KWBson bsonId];
     
     return model;
 }
@@ -123,7 +123,7 @@
             [self findOrCreateWithDict:dict];
         }
         
-        [[UBAppDelegate moc] save:nil];
+        [[BSAppDelegate moc] save:nil];
         
         NSString *notification = [NSString stringWithFormat:@"%@:fetchAll", [self modelName]];
         [[NSNotificationCenter defaultCenter] postNotificationName:notification object:self];
@@ -220,7 +220,7 @@
     // this needs to go somewhere else
     //self.updatedAt = [NSNumber numberWithInteger:[[NSDate date] timeIntervalSince1970]];
     
-    if (![[UBAppDelegate moc] save:&error]) {
+    if (![[BSAppDelegate moc] save:&error]) {
         NSLog(@"Error %@: Failed to save managed object context", [[self class] modelName]);
         abort();
     }
@@ -229,7 +229,7 @@
 - (void)destroy
 {
     // kill self
-    [[UBAppDelegate moc] deleteObject:self];
+    [[BSAppDelegate moc] deleteObject:self];
     [self save];
 }
 
