@@ -10,9 +10,12 @@
 
 #import <Accounts/Accounts.h>
 
+@class BSUser;
+
 @interface BSSession : NSObject
 
 @property (nonatomic) ACAccount *twitterAccount;
+@property (nonatomic, readonly) BSUser *user;
 
 + (BSSession *)defaultSession;
 + (BOOL)hasAccount;

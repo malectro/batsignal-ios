@@ -9,6 +9,8 @@
 #import "BSMainViewController.h"
 
 #import "BSMainView.h"
+#import "BSBeacon.h"
+#import "BSSession.h"
 
 @interface BSMainViewController ()
 
@@ -39,6 +41,8 @@
 	
     self.mainView.mapView.showsUserLocation = YES;
     self.mainView.mapView.delegate = self;
+    
+    [self.mainView.postSignalButton addTarget:self action:@selector(postBeacon) forControlEvents:UIControlEventTouchDown];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -50,6 +54,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - custom methods
+
+- (void)postBeacon
+{
+    BSBeacon *beacon = [BSBeacon create];
+    beacon.user = [BSSession defaultSession].user;
+    beacon.location = self.mainView.mapView.userLocation.coordinate;
+    [beacon save];
 }
 
 #pragma mark - MKMapViewDelegate methods

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <MapKit/MapKit.h>
 
 #import "KWModel.h"
 
@@ -21,5 +22,7 @@
 @property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSNumber * updatedAt;
 @property (nonatomic, retain) BSUser *user;
+
+@property (nonatomic) CLLocationCoordinate2D location;
 
 @end

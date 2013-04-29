@@ -12,6 +12,7 @@
 #import <TWAPIManager.h>
 
 #import "KWRequest.h"
+#import "BSUser.h"
 
 @interface BSSession ()
 
@@ -20,6 +21,8 @@
 @end
 
 @implementation BSSession
+
+@synthesize user = _user;
 
 + (BSSession *)defaultSession
 {
@@ -74,6 +77,9 @@
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
                         });
+                        
+                        _user = [BSUser findOrCreateWithDict:response];
+                        
                         NSLog(@"response %@", response);
                     }];
                     
