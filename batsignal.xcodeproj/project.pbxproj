@@ -38,6 +38,8 @@
 		86B4BE98172ED9800009A090 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE97172ED9800009A090 /* MapKit.framework */; };
 		86B4BE9C172F04480009A090 /* KWModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE9B172F04480009A090 /* KWModel.m */; };
 		86B4BE9F172F05330009A090 /* KWBson.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE9E172F05330009A090 /* KWBson.m */; };
+		86B4BEA2172F07850009A090 /* BSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BEA1172F07850009A090 /* BSUser.m */; };
+		86B4BEA5172F079B0009A090 /* BSBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BEA4172F079B0009A090 /* BSBeacon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,10 @@
 		86B4BE9B172F04480009A090 /* KWModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KWModel.m; path = models/KWModel.m; sourceTree = "<group>"; };
 		86B4BE9D172F05330009A090 /* KWBson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KWBson.h; path = helpers/KWBson.h; sourceTree = "<group>"; };
 		86B4BE9E172F05330009A090 /* KWBson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KWBson.m; path = helpers/KWBson.m; sourceTree = "<group>"; };
+		86B4BEA0172F07850009A090 /* BSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSUser.h; path = models/BSUser.h; sourceTree = "<group>"; };
+		86B4BEA1172F07850009A090 /* BSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSUser.m; path = models/BSUser.m; sourceTree = "<group>"; };
+		86B4BEA3172F079B0009A090 /* BSBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSBeacon.h; path = models/BSBeacon.h; sourceTree = "<group>"; };
+		86B4BEA4172F079B0009A090 /* BSBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSBeacon.m; path = models/BSBeacon.m; sourceTree = "<group>"; };
 		C831DEB9EBD943B99F6AC8A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -255,6 +261,10 @@
 			children = (
 				86B4BE9A172F04480009A090 /* KWModel.h */,
 				86B4BE9B172F04480009A090 /* KWModel.m */,
+				86B4BEA0172F07850009A090 /* BSUser.h */,
+				86B4BEA1172F07850009A090 /* BSUser.m */,
+				86B4BEA3172F079B0009A090 /* BSBeacon.h */,
+				86B4BEA4172F079B0009A090 /* BSBeacon.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -410,6 +420,8 @@
 				86B4BE96172EC8FF0009A090 /* BSMainView.m in Sources */,
 				86B4BE9C172F04480009A090 /* KWModel.m in Sources */,
 				86B4BE9F172F05330009A090 /* KWBson.m in Sources */,
+				86B4BEA2172F07850009A090 /* BSUser.m in Sources */,
+				86B4BEA5172F079B0009A090 /* BSBeacon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
