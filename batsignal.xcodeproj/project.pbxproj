@@ -33,6 +33,8 @@
 		86B4BE8C1729B7420009A090 /* KWRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE8B1729B7420009A090 /* KWRequest.m */; };
 		86B4BE8E1729BBC00009A090 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE8D1729BBC00009A090 /* Accounts.framework */; };
 		86B4BE901729BC240009A090 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE8F1729BC240009A090 /* SystemConfiguration.framework */; };
+		86B4BE93172EC86D0009A090 /* BSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE92172EC86D0009A090 /* BSMainViewController.m */; };
+		86B4BE96172EC8FF0009A090 /* BSMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE95172EC8FF0009A090 /* BSMainView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,10 @@
 		86B4BE8B1729B7420009A090 /* KWRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KWRequest.m; path = helpers/KWRequest.m; sourceTree = "<group>"; };
 		86B4BE8D1729BBC00009A090 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		86B4BE8F1729BC240009A090 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		86B4BE91172EC86D0009A090 /* BSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSMainViewController.h; path = controllers/BSMainViewController.h; sourceTree = "<group>"; };
+		86B4BE92172EC86D0009A090 /* BSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSMainViewController.m; path = controllers/BSMainViewController.m; sourceTree = "<group>"; };
+		86B4BE94172EC8FF0009A090 /* BSMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSMainView.h; path = views/BSMainView.h; sourceTree = "<group>"; };
+		86B4BE95172EC8FF0009A090 /* BSMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSMainView.m; path = views/BSMainView.m; sourceTree = "<group>"; };
 		C831DEB9EBD943B99F6AC8A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -203,6 +209,8 @@
 			children = (
 				86B4BE7A17297C280009A090 /* BSLoginViewController.h */,
 				86B4BE7B17297C280009A090 /* BSLoginViewController.m */,
+				86B4BE91172EC86D0009A090 /* BSMainViewController.h */,
+				86B4BE92172EC86D0009A090 /* BSMainViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +220,8 @@
 			children = (
 				86B4BE7E17297C530009A090 /* BSLoginView.h */,
 				86B4BE7F17297C530009A090 /* BSLoginView.m */,
+				86B4BE94172EC8FF0009A090 /* BSMainView.h */,
+				86B4BE95172EC8FF0009A090 /* BSMainView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -374,6 +384,8 @@
 				86B4BE8017297C530009A090 /* BSLoginView.m in Sources */,
 				86B4BE861729B0860009A090 /* BSSession.m in Sources */,
 				86B4BE8C1729B7420009A090 /* KWRequest.m in Sources */,
+				86B4BE93172EC86D0009A090 /* BSMainViewController.m in Sources */,
+				86B4BE96172EC8FF0009A090 /* BSMainView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

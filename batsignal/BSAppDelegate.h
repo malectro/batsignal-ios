@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class BSMainViewController;
+@class BSLoginViewController;
+
 @interface BSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -15,6 +18,9 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+@property (readonly, nonatomic) BSMainViewController *mainViewController;
+@property (readonly, nonatomic) BSLoginViewController *loginViewController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

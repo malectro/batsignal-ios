@@ -8,13 +8,18 @@
 
 #import "BSAppDelegate.h"
 
+#import "BSSession.h"
+
 #import "BSLoginViewController.h"
+#import "BSMainViewController.h"
 
 @implementation BSAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize mainViewController = _mainViewController;
+@synthesize loginViewController = _loginViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -22,10 +27,29 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.window.rootViewController = [[BSLoginViewController alloc] init];
+    // set up session notifictations
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentAuthView) name:@"session:expired" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(presentMainView) name:@"session:authed" object:nil];
+    
+    // set initial view
+    if ([BSSession hasAccount]) {
+        [self presentMainView];
+    } else {
+        [self presentAuthView];
+    }
     
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)presentAuthView
+{
+    self.window.rootViewController = self.loginViewController;
+}
+
+- (void)presentMainView
+{
+    self.window.rootViewController = self.mainViewController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -68,6 +92,24 @@
             abort();
         } 
     }
+}
+
+#pragma mark - Getters
+
+- (BSMainViewController *)mainViewController
+{
+    if (_mainViewController == nil) {
+        _mainViewController = [[BSMainViewController alloc] init];
+    }
+    return _mainViewController;
+}
+
+- (BSLoginViewController *)loginViewController
+{
+    if (_loginViewController == nil) {
+        _loginViewController = [[BSLoginViewController alloc] init];
+    }
+    return _loginViewController;
 }
 
 #pragma mark - Core Data stack

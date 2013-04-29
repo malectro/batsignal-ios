@@ -13,8 +13,10 @@
 @interface BSSession : NSObject
 
 @property (nonatomic) ACAccount *twitterAccount;
+@property (nonatomic, readonly) NSNotificationCenter *events;
 
 + (BSSession *)defaultSession;
++ (BOOL)hasAccount;
 
 - (void)auth;
 

@@ -30,11 +30,17 @@
     return session;
 }
 
++ (BOOL)hasAccount
+{
+    return [BSSession defaultSession].twitterAccount != nil;
+}
+
 - (id)init
 {
     self = [super init];
     if (self) {
         _accountStore = [[ACAccountStore alloc] init];
+        _events = [[NSNotificationCenter alloc] init];
     }
     return self;
 }
@@ -58,6 +64,7 @@
                     NSString *path = [NSString stringWithFormat:@"/auth/twitter_reverse/callback?%@", string];
                     
                     [KWRequest get:path callback:^(id response) {
+                        [self.events postNotificationName:@"auth" object:self];
                         NSLog(@"response %@", response);
                     }];
                     
