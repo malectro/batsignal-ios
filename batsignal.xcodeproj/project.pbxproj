@@ -170,6 +170,7 @@
 				86580DF11728761900A96F4E /* BSAppDelegate.h */,
 				86580DF21728761900A96F4E /* BSAppDelegate.m */,
 				86580DFA1728761900A96F4E /* batsignal.xcdatamodeld */,
+				86B4BE99172EFEE00009A090 /* Models */,
 				86580DE91728761900A96F4E /* Supporting Files */,
 			);
 			path = batsignal;
@@ -239,6 +240,13 @@
 				86B4BE8B1729B7420009A090 /* KWRequest.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		86B4BE99172EFEE00009A090 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
