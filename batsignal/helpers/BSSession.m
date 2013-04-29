@@ -40,7 +40,6 @@
     self = [super init];
     if (self) {
         _accountStore = [[ACAccountStore alloc] init];
-        _events = [[NSNotificationCenter alloc] init];
     }
     return self;
 }
@@ -64,7 +63,7 @@
                     NSString *path = [NSString stringWithFormat:@"/auth/twitter_reverse/callback?%@", string];
                     
                     [KWRequest get:path callback:^(id response) {
-                        [self.events postNotificationName:@"auth" object:self];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
                         NSLog(@"response %@", response);
                     }];
                     
