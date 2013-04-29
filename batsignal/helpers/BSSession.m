@@ -40,8 +40,17 @@
     self = [super init];
     if (self) {
         _accountStore = [[ACAccountStore alloc] init];
+        
+        [self attemptToGrabTwitterAccount];
     }
     return self;
+}
+
+- (void)attemptToGrabTwitterAccount
+{
+    ACAccountType *accountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    NSArray *accounts = [self.accountStore accountsWithAccountType:accountType];
+    self.twitterAccount = [accounts lastObject];
 }
 
 - (void)auth
@@ -52,8 +61,7 @@
         
         [self.accountStore requestAccessToAccountsWithType:accountType options:NULL completion:^(BOOL granted, NSError *error) {
             if (granted) {
-                NSArray *accounts = [self.accountStore accountsWithAccountType:accountType];
-                self.twitterAccount = [accounts lastObject];
+                [self attemptToGrabTwitterAccount];
                 
                 NSLog(@"Logged in with %@ %@ %@", self.twitterAccount.username, self.twitterAccount.credential, self.twitterAccount.identifier);
                 

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @class BSMainView;
 
-@interface BSMainViewController : UIViewController
+@interface BSMainViewController : UIViewController<MKMapViewDelegate>
 
 @property (nonatomic) BSMainView *mainView;
 
