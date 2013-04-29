@@ -35,6 +35,7 @@
 		86B4BE901729BC240009A090 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE8F1729BC240009A090 /* SystemConfiguration.framework */; };
 		86B4BE93172EC86D0009A090 /* BSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE92172EC86D0009A090 /* BSMainViewController.m */; };
 		86B4BE96172EC8FF0009A090 /* BSMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE95172EC8FF0009A090 /* BSMainView.m */; };
+		86B4BE98172ED9800009A090 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE97172ED9800009A090 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		86B4BE92172EC86D0009A090 /* BSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSMainViewController.m; path = controllers/BSMainViewController.m; sourceTree = "<group>"; };
 		86B4BE94172EC8FF0009A090 /* BSMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSMainView.h; path = views/BSMainView.h; sourceTree = "<group>"; };
 		86B4BE95172EC8FF0009A090 /* BSMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSMainView.m; path = views/BSMainView.m; sourceTree = "<group>"; };
+		86B4BE97172ED9800009A090 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C831DEB9EBD943B99F6AC8A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B4BE98172ED9800009A090 /* MapKit.framework in Frameworks */,
 				86B4BE901729BC240009A090 /* SystemConfiguration.framework in Frameworks */,
 				86B4BE8E1729BBC00009A090 /* Accounts.framework in Frameworks */,
 				86B4BE82172980B20009A090 /* Social.framework in Frameworks */,
@@ -123,6 +126,7 @@
 		86580DD41728761900A96F4E = {
 			isa = PBXGroup;
 			children = (
+				86B4BE97172ED9800009A090 /* MapKit.framework */,
 				86B4BE8F1729BC240009A090 /* SystemConfiguration.framework */,
 				86B4BE8D1729BBC00009A090 /* Accounts.framework */,
 				86B4BE81172980B20009A090 /* Social.framework */,

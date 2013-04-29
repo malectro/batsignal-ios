@@ -10,13 +10,30 @@
 
 @implementation BSMainView
 
+@synthesize mapView = _mapView;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self addSubview:self.mapView];
     }
     return self;
+}
+
+- (void)layoutSubviews
+{
+    self.mapView.frame = self.frame;
+}
+
+#pragma mark - Getters!
+
+- (MKMapView *)mapView
+{
+    if (_mapView == nil) {
+        _mapView = [[MKMapView alloc] initWithFrame:CGRectZero];
+    }
+    return _mapView;
 }
 
 /*

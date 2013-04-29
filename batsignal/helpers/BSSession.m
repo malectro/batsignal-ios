@@ -63,7 +63,9 @@
                     NSString *path = [NSString stringWithFormat:@"/auth/twitter_reverse/callback?%@", string];
                     
                     [KWRequest get:path callback:^(id response) {
-                        [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
+                        });
                         NSLog(@"response %@", response);
                     }];
                     

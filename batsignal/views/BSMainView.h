@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface BSMainView : UIView
+
+@property (nonatomic, readonly) MKMapView *mapView;
 
 @end
