@@ -37,6 +37,7 @@
 		86B4BE96172EC8FF0009A090 /* BSMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE95172EC8FF0009A090 /* BSMainView.m */; };
 		86B4BE98172ED9800009A090 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE97172ED9800009A090 /* MapKit.framework */; };
 		86B4BE9C172F04480009A090 /* KWModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE9B172F04480009A090 /* KWModel.m */; };
+		86B4BE9F172F05330009A090 /* KWBson.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE9E172F05330009A090 /* KWBson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		86B4BE97172ED9800009A090 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		86B4BE9A172F04480009A090 /* KWModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KWModel.h; path = models/KWModel.h; sourceTree = "<group>"; };
 		86B4BE9B172F04480009A090 /* KWModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KWModel.m; path = models/KWModel.m; sourceTree = "<group>"; };
+		86B4BE9D172F05330009A090 /* KWBson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KWBson.h; path = helpers/KWBson.h; sourceTree = "<group>"; };
+		86B4BE9E172F05330009A090 /* KWBson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KWBson.m; path = helpers/KWBson.m; sourceTree = "<group>"; };
 		C831DEB9EBD943B99F6AC8A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -241,6 +244,8 @@
 				86B4BE851729B0860009A090 /* BSSession.m */,
 				86B4BE8A1729B7420009A090 /* KWRequest.h */,
 				86B4BE8B1729B7420009A090 /* KWRequest.m */,
+				86B4BE9D172F05330009A090 /* KWBson.h */,
+				86B4BE9E172F05330009A090 /* KWBson.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				86B4BE93172EC86D0009A090 /* BSMainViewController.m in Sources */,
 				86B4BE96172EC8FF0009A090 /* BSMainView.m in Sources */,
 				86B4BE9C172F04480009A090 /* KWModel.m in Sources */,
+				86B4BE9F172F05330009A090 /* KWBson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
