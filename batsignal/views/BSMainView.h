@@ -12,5 +12,6 @@
 @interface BSMainView : UIView
 
 @property (nonatomic, readonly) MKMapView *mapView;
+@property (nonatomic, readonly) UIButton *postSignalButton;
 
 @end
