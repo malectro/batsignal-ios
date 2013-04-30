@@ -67,4 +67,10 @@
     return self.user.name;
 }
 
+- (NSString *)subtitle
+{
+    return @"party time!";
+    return self.text;
+}
+
 @end

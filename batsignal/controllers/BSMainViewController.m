@@ -54,9 +54,6 @@
     
     [self.mainView.postSignalButton addTarget:self action:@selector(postBeacon) forControlEvents:UIControlEventTouchDown];
     
-    NSLog(@"users %@", [[BSUser all] valueForKey:@"id"]);
-    NSLog(@"session user %@", [BSSession defaultSession].user);
-    
     [self loadBeacons];
     
     [BSBeacon fetchAll];
@@ -82,8 +79,6 @@
     beacon.coordinate = self.mainView.mapView.userLocation.coordinate;
     [beacon save];
     [beacon sync];
-    
-    NSLog(@"all beacons %@", [BSBeacon all]);
 }
 
 #pragma mark - MKMapViewDelegate methods
@@ -139,6 +134,7 @@
     NSArray *beacons = self.fetchedResultsController.fetchedObjects;
     
     NSLog(@"beacons %@", beacons);
+    NSLog(@"user name %@", [BSSession defaultSession].user.name);
     
     [self.mainView.mapView removeAnnotations:self.groupedBeacons];
     

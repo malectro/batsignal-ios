@@ -26,4 +26,9 @@
     return @"/users";
 }
 
++ (NSDictionary *)keyMap
+{
+    return @{@"name": @"name"};
+}
+
 @end
