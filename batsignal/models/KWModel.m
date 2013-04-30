@@ -149,12 +149,19 @@
     return model;
 }
 
+- (void)customUpdate:(NSDictionary *)dict
+{
+    // override this if you want cooler stuff to happen
+}
+
 - (void)updateWithDict:(NSDictionary *)dict
 {
     NSMutableDictionary *keyMap = [NSMutableDictionary dictionaryWithDictionary:[[self class] keyMap]];
     
     keyMap[@"updated_at"] = @"updatedAt";
     keyMap[@"id"] = @"id";
+    
+    [self customUpdate:dict];
     
     for (NSString *key in dict) {
         //NSLog(@"mapping %@ : %@", [[self class] modelName], key);
@@ -243,8 +250,7 @@
             model.id = dict[@"id"];
             model.updatedAt = dict[@"updated_at"];
         }];
-    }
-    else {
+    } else {
         // update
         NSString *url = [[self class] modelUrl];
         url = [url stringByAppendingFormat:@"/%@", self.id];

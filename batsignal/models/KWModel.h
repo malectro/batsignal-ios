@@ -28,6 +28,7 @@
 + (NSArray *)modelSort;
 + (NSDictionary *)keyMap;
 - (NSDictionary *)asDict;
+- (void)customUpdate:(NSDictionary *)dict;
 
 - (void)save;
 - (void)destroy;

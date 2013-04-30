@@ -79,6 +79,7 @@
     beacon.user = [BSSession defaultSession].user;
     beacon.coordinate = self.mainView.mapView.userLocation.coordinate;
     [beacon save];
+    [beacon sync];
     
     NSLog(@"all beacons %@", [BSBeacon all]);
 }

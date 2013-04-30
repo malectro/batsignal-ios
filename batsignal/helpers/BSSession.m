@@ -82,6 +82,7 @@
                         _user = [BSUser findOrCreateWithDict:response];
                         [_user save];
                         [[NSUserDefaults standardUserDefaults] setValue:self.user.id forKey:@"userId"];
+                        
                         NSLog(@"user default id %@", [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]);
                         
                         NSLog(@"response %@", response);

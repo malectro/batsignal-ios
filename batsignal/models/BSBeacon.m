@@ -19,6 +19,38 @@
 @dynamic updatedAt;
 @dynamic user;
 
++ (NSString *)modelName
+{
+    return @"BSBeacon";
+}
+
++ (NSString *)modelUrl
+{
+    return @"/beacons";
+}
+
++ (NSDictionary *)keyMap
+{
+    return @{@"text": @"text",
+             @"user": [BSUser class]};
+}
+
+- (void)customUpdate:(NSDictionary *)dict
+{
+    self.geoLon = dict[@"geo"][@"lng"];
+    self.geoLat = dict[@"geo"][@"lat"];
+}
+
+- (NSDictionary *)asDict
+{
+    NSMutableDictionary *dict = [[self dictionaryWithValuesForKeys:@[@"id", @"text"]] mutableCopy];
+    
+    dict[@"geo"] = @{@"lat": self.geoLat, @"lng": self.geoLon};
+    dict[@"user_id"] = self.user.id;
+    
+    return dict;
+}
+
 - (CLLocationCoordinate2D)coordinate
 {
     return CLLocationCoordinate2DMake(self.geoLat.doubleValue, self.geoLon.doubleValue);
@@ -30,14 +62,9 @@
     self.geoLon = [NSNumber numberWithDouble:newCoordinate.longitude];
 }
 
-+ (NSString *)modelName
+- (NSString *)title
 {
-    return @"BSBeacon";
-}
-
-+ (NSString *)modelUrl
-{
-    return @"/beacons";
+    return self.user.name;
 }
 
 @end
