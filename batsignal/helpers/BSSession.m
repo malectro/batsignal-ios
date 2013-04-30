@@ -74,14 +74,16 @@
                     NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
                     NSString *path = [NSString stringWithFormat:@"/auth/twitter_reverse/callback?%@", string];
                     
-                    [KWRequest get:path callback:^(id response) {
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
-                        });
-                        
-                        _user = [BSUser findOrCreateWithDict:response];
-                        [_user save];
-                        [[NSUserDefaults standardUserDefaults] setValue:self.user.id forKey:@"userId"];
+                    [KWRequest get:path callback:^(NSDictionary *response) {
+                        if (response && response[@"id"]) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
+                            });
+                            
+                            _user = [BSUser findOrCreateWithDict:response];
+                            [_user save];
+                            [[NSUserDefaults standardUserDefaults] setValue:self.user.id forKey:@"userId"];
+                        }
                         
                         NSLog(@"user default id %@", [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]);
                         

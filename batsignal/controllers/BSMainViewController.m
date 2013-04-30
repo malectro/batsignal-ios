@@ -54,10 +54,12 @@
     
     [self.mainView.postSignalButton addTarget:self action:@selector(postBeacon) forControlEvents:UIControlEventTouchDown];
     
-    NSLog(@"users %@", [BSUser all]);
+    NSLog(@"users %@", [[BSUser all] valueForKey:@"id"]);
     NSLog(@"session user %@", [BSSession defaultSession].user);
     
     [self loadBeacons];
+    
+    [BSBeacon fetchAll];
 }
 
 - (void)viewDidAppear:(BOOL)animated
