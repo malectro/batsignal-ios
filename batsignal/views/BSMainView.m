@@ -12,6 +12,7 @@
 
 @synthesize mapView = _mapView;
 @synthesize postSignalButton = _postSignalButton;
+@synthesize profileButton = _profileButton;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -19,6 +20,7 @@
     if (self) {
         [self addSubview:self.mapView];
         [self addSubview:self.postSignalButton];
+        [self addSubview:self.profileButton];
     }
     return self;
 }
@@ -27,6 +29,15 @@
 {
     self.mapView.frame = self.frame;
     self.postSignalButton.center = CGPointMake(self.frame.size.width / 2.0f, self.frame.size.height - 30.0f);
+    self.profileButton.frame = CGRectMake(self.frame.size.width - self.profileButton.frame.size.width - 10.0f,
+                                          self.frame.size.height - 35.0f,
+                                          self.profileButton.frame.size.width,
+                                          30.0f);
+}
+
+- (void)presentProfile
+{
+    
 }
 
 #pragma mark - Getters!
@@ -48,6 +59,19 @@
         [_postSignalButton sizeToFit];
     }
     return _postSignalButton;
+}
+
+- (UIButton *)profileButton
+{
+    if (_profileButton == nil) {
+        _profileButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [_profileButton setTitle:@"profile" forState:UIControlStateNormal];
+        _profileButton.titleLabel.font = [UIFont systemFontOfSize:26.0f];
+        [_profileButton sizeToFit];
+        
+        [self.profileButton addTarget:self action:@selector(presentProfile) forControlEvents:UIControlEventTouchDown];
+    }
+    return _profileButton;
 }
 
 /*

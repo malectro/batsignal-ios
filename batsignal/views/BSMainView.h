@@ -13,5 +13,6 @@
 
 @property (nonatomic, readonly) MKMapView *mapView;
 @property (nonatomic, readonly) UIButton *postSignalButton;
+@property (nonatomic, readonly) UIButton *profileButton;
 
 @end
