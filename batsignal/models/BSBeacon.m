@@ -19,15 +19,15 @@
 @dynamic updatedAt;
 @dynamic user;
 
-- (CLLocationCoordinate2D)location
+- (CLLocationCoordinate2D)coordinate
 {
     return CLLocationCoordinate2DMake(self.geoLat.doubleValue, self.geoLon.doubleValue);
 }
 
-- (void)setLocation:(CLLocationCoordinate2D)location
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate
 {
-    self.geoLat = [NSNumber numberWithDouble:location.latitude];
-    self.geoLon = [NSNumber numberWithDouble:location.longitude];
+    self.geoLat = [NSNumber numberWithDouble:newCoordinate.latitude];
+    self.geoLon = [NSNumber numberWithDouble:newCoordinate.longitude];
 }
 
 + (NSString *)modelName

@@ -11,8 +11,9 @@
 
 @class BSMainView;
 
-@interface BSMainViewController : UIViewController<MKMapViewDelegate>
+@interface BSMainViewController : UIViewController<MKMapViewDelegate,NSFetchedResultsControllerDelegate>
 
 @property (nonatomic) BSMainView *mainView;
+@property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
 
 @end

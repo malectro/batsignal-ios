@@ -35,7 +35,7 @@
 
 + (BOOL)hasAccount
 {
-    return [BSSession defaultSession].twitterAccount != nil;
+    return [BSSession defaultSession].user != nil;
 }
 
 - (id)init
@@ -44,9 +44,10 @@
     if (self) {
         _accountStore = [[ACAccountStore alloc] init];
         
+        _user = [BSUser find:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]];
         [self attemptToGrabTwitterAccount];
     }
-    return self;
+    return self; 
 }
 
 - (void)attemptToGrabTwitterAccount
@@ -58,7 +59,6 @@
 
 - (void)auth
 {
-    
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         ACAccountType *accountType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
         

@@ -14,7 +14,7 @@
 
 @class BSUser;
 
-@interface BSBeacon : KWModel
+@interface BSBeacon : KWModel<MKAnnotation>
 
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSNumber * geoLat;
@@ -22,7 +22,5 @@
 @property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSNumber * updatedAt;
 @property (nonatomic, retain) BSUser *user;
-
-@property (nonatomic) CLLocationCoordinate2D location;
 
 @end

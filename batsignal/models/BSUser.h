@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * updatedAt;
 @property (nonatomic, retain) NSSet *beacons;
+
 @end
 
 @interface BSUser (CoreDataGeneratedAccessors)

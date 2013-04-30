@@ -16,4 +16,14 @@
 @dynamic updatedAt;
 @dynamic beacons;
 
++ (NSString *)modelName
+{
+    return @"BSUser";
+}
+
++ (NSString *)modelUrl
+{
+    return @"/users";
+}
+
 @end
