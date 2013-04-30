@@ -45,6 +45,7 @@
         _accountStore = [[ACAccountStore alloc] init];
         
         _user = [BSUser find:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]];
+        NSLog(@"user default id %@", [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]);
         [self attemptToGrabTwitterAccount];
     }
     return self; 
@@ -79,6 +80,9 @@
                         });
                         
                         _user = [BSUser findOrCreateWithDict:response];
+                        [_user save];
+                        [[NSUserDefaults standardUserDefaults] setValue:self.user.id forKey:@"userId"];
+                        NSLog(@"user default id %@", [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]);
                         
                         NSLog(@"response %@", response);
                     }];
