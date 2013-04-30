@@ -40,6 +40,7 @@
 		86B4BE9F172F05330009A090 /* KWBson.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE9E172F05330009A090 /* KWBson.m */; };
 		86B4BEA2172F07850009A090 /* BSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BEA1172F07850009A090 /* BSUser.m */; };
 		86B4BEA5172F079B0009A090 /* BSBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BEA4172F079B0009A090 /* BSBeacon.m */; };
+		86B4BEA7173004EB0009A090 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BEA6173004EB0009A090 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		86B4BEA1172F07850009A090 /* BSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSUser.m; path = models/BSUser.m; sourceTree = "<group>"; };
 		86B4BEA3172F079B0009A090 /* BSBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSBeacon.h; path = models/BSBeacon.h; sourceTree = "<group>"; };
 		86B4BEA4172F079B0009A090 /* BSBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSBeacon.m; path = models/BSBeacon.m; sourceTree = "<group>"; };
+		86B4BEA6173004EB0009A090 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C831DEB9EBD943B99F6AC8A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B4BEA7173004EB0009A090 /* CoreLocation.framework in Frameworks */,
 				86B4BE98172ED9800009A090 /* MapKit.framework in Frameworks */,
 				86B4BE901729BC240009A090 /* SystemConfiguration.framework in Frameworks */,
 				86B4BE8E1729BBC00009A090 /* Accounts.framework in Frameworks */,
@@ -138,6 +141,7 @@
 		86580DD41728761900A96F4E = {
 			isa = PBXGroup;
 			children = (
+				86B4BEA6173004EB0009A090 /* CoreLocation.framework */,
 				86B4BE97172ED9800009A090 /* MapKit.framework */,
 				86B4BE8F1729BC240009A090 /* SystemConfiguration.framework */,
 				86B4BE8D1729BBC00009A090 /* Accounts.framework */,

@@ -64,6 +64,8 @@
     beacon.user = [BSSession defaultSession].user;
     beacon.location = self.mainView.mapView.userLocation.coordinate;
     [beacon save];
+    
+    NSLog(@"all beacons %@", [BSBeacon all]);
 }
 
 #pragma mark - MKMapViewDelegate methods

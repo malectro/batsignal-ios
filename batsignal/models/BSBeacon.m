@@ -30,4 +30,14 @@
     self.geoLon = [NSNumber numberWithDouble:location.longitude];
 }
 
++ (NSString *)modelName
+{
+    return @"BSBeacon";
+}
+
++ (NSString *)modelUrl
+{
+    return @"/beacons";
+}
+
 @end
