@@ -14,19 +14,26 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        self.backgroundColor = [UIColor blueColor];
+        _username = [[UILabel alloc] init];
+        
+        _backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [_backButton setTitle:@"->" forState:UIControlStateNormal];
+        [_backButton sizeToFit];
+        [self addSubview:_backButton];
+        
+        _logoutButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [_logoutButton setTitle:@"log out" forState:UIControlStateNormal];
+        [_logoutButton sizeToFit];
+        [self addSubview:_logoutButton];
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)layoutSubviews
 {
-    // Drawing code
+    _username.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, 30.0f);
+    _backButton.frame = CGRectMake(0.0f, self.frame.size.height - 30.0f, self.frame.size.width, 30.0f);
+    _logoutButton.frame = CGRectMake(0.0f, 30.0f, self.frame.size.width, 30.0f);
 }
-*/
 
 @end

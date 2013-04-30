@@ -18,7 +18,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //[self addSubview:self.mapView];
+        [self addSubview:self.mapView];
         [self addSubview:self.postSignalButton];
         [self addSubview:self.profileButton];
     }
