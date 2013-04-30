@@ -10,7 +10,11 @@
 
 #import "Reachability.h"
 
+#ifdef DEBUG
 #define kHostName @"http://localhost:3000"
+#else
+#define kHostName @"http://localhost:3000"
+#endif
 
 @interface KWRequest ()
 

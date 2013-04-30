@@ -529,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C831DEB9EBD943B99F6AC8A2 /* Pods.xcconfig */;
 			buildSettings = {
+				API_URL = "http://localhost:3000";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "batsignal/batsignal-Prefix.pch";
 				INFOPLIST_FILE = "batsignal/batsignal-Info.plist";
@@ -542,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C831DEB9EBD943B99F6AC8A2 /* Pods.xcconfig */;
 			buildSettings = {
+				API_URL = "http://localhost:3000";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "batsignal/batsignal-Prefix.pch";
 				INFOPLIST_FILE = "batsignal/batsignal-Info.plist";
