@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class BSProfileView;
+
 @interface BSProfileViewController : UIViewController
+
+@property (nonatomic, readonly) BSProfileView *profileView;
 
 @end

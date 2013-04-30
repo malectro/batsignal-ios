@@ -8,25 +8,26 @@
 
 #import "BSProfileViewController.h"
 
+#import "BSProfileView.h"
+
 @interface BSProfileViewController ()
 
 @end
 
 @implementation BSProfileViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
 
-- (void)viewDidLoad
+- (void)loadView
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.view = _profileView = [[BSProfileView alloc] init];
 }
 
 - (void)didReceiveMemoryWarning

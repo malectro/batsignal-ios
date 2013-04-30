@@ -10,6 +10,7 @@
 
 #import "BSAppDelegate.h"
 #import "BSMainView.h"
+#import "BSProfileViewController.h"
 #import "BSUser.h"
 #import "BSBeacon.h"
 #import "BSSession.h"
@@ -36,6 +37,9 @@
         _shouldUpdateMapCenter = YES;
         self.userIdCache = [[NSMutableDictionary alloc] init];
         self.groupedBeacons = [[NSMutableArray alloc] init];
+        
+        _profileViewController = [[BSProfileViewController alloc] init];
+        [self addChildViewController:_profileViewController];
     }
     return self;
 }
@@ -48,6 +52,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.mainView.profileView = _profileViewController.view;
 	
     self.mainView.mapView.showsUserLocation = YES;
     self.mainView.mapView.delegate = self;

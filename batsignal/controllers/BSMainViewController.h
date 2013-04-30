@@ -10,10 +10,13 @@
 #import <MapKit/MapKit.h>
 
 @class BSMainView;
+@class BSProfileViewController;
 
 @interface BSMainViewController : UIViewController<MKMapViewDelegate,NSFetchedResultsControllerDelegate>
 
 @property (nonatomic) BSMainView *mainView;
+@property (nonatomic, readonly) BSProfileViewController *profileViewController;
+
 @property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
 
 @end

@@ -18,7 +18,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self addSubview:self.mapView];
+        //[self addSubview:self.mapView];
         [self addSubview:self.postSignalButton];
         [self addSubview:self.profileButton];
     }
@@ -33,11 +33,18 @@
                                           self.frame.size.height - 35.0f,
                                           self.profileButton.frame.size.width,
                                           30.0f);
+    
+    // profile view sits to the right of the screen
+    if (self.profileView != nil) {
+        self.profileView.frame = CGRectMake(self.frame.size.width, 0.0f, self.frame.size.width / 2.0f, self.frame.size.height);
+    }
 }
 
 - (void)presentProfile
 {
-    
+    [UIView animateWithDuration:0.2f animations:^{
+        self.profileView.frame = CGRectOffset(self.profileView.frame, -self.profileView.frame.size.width, 0.0f);
+    }];
 }
 
 #pragma mark - Getters!
@@ -74,13 +81,13 @@
     return _profileButton;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)setProfileView:(UIView *)profileView
 {
-    // Drawing code
+    if (_profileView != nil) {
+        [_profileView removeFromSuperview];
+    }
+    _profileView = profileView;
+    [self addSubview:_profileView];
 }
-*/
 
 @end
