@@ -21,5 +21,6 @@
 + (BOOL)hasAccount;
 
 - (void)auth;
+- (void)logOut;
 
 @end

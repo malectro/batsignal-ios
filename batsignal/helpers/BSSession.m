@@ -132,4 +132,16 @@
     }
 }
 
+- (void)logOut
+{
+    [KWRequest get:@"/signout" callback:^(id data) {
+        _user = nil;
+        [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"userId"];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"session:expired" object:nil];
+        });
+    }];
+}
+
 @end
