@@ -8,6 +8,8 @@
 
 #import "BSMainView.h"
 
+#import "BSProfileView.h"
+
 @implementation BSMainView
 
 @synthesize mapView = _mapView;
@@ -47,6 +49,13 @@
     }];
 }
 
+- (void)hideProfile
+{
+    [UIView animateWithDuration:0.2f animations:^{
+        self.profileView.frame = CGRectMake(self.frame.size.width, 0.0f, self.frame.size.width / 2.0f, self.frame.size.height);
+    }];
+}
+
 #pragma mark - Getters!
 
 - (MKMapView *)mapView
@@ -81,13 +90,15 @@
     return _profileButton;
 }
 
-- (void)setProfileView:(UIView *)profileView
+- (void)setProfileView:(BSProfileView *)profileView
 {
     if (_profileView != nil) {
         [_profileView removeFromSuperview];
     }
     _profileView = profileView;
     [self addSubview:_profileView];
+    
+    [_profileView.backButton addTarget:self action:@selector(hideProfile) forControlEvents:UIControlEventTouchDown];
 }
 
 @end

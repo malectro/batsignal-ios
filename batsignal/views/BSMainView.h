@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+@class BSProfileView;
+
 @interface BSMainView : UIView
 
 @property (nonatomic, readonly) MKMapView *mapView;
 @property (nonatomic, readonly) UIButton *postSignalButton;
 @property (nonatomic, readonly) UIButton *profileButton;
 
-@property (nonatomic) UIView *profileView;
+@property (nonatomic) BSProfileView *profileView;
 
 @end
