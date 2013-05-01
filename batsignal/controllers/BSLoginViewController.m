@@ -46,7 +46,9 @@
 
 - (void)twitterLogin
 {
-    [[BSSession defaultSession] auth];
+    [[BSSession defaultSession] getTwitterAccounts:^(NSArray *accounts, NSString *error) {
+        [[BSSession defaultSession] authWithTwitterAccount:[accounts lastObject]];
+    }];
 }
 
 @end

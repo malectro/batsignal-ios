@@ -20,7 +20,8 @@
 + (BSSession *)defaultSession;
 + (BOOL)hasAccount;
 
-- (void)auth;
+- (void)getTwitterAccounts:(void (^)(NSArray *accounts, NSString *error))handler;
+- (void)authWithTwitterAccount:(ACAccount *)account;
 - (void)logOut;
 
 @end
