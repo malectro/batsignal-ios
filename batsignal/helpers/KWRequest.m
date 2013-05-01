@@ -13,7 +13,7 @@
 #ifdef DEBUG
 #define kHostName @"http://localhost:3000"
 #else
-#define kHostName @"http://localhost:3000"
+#define kHostName @"http://sygnal.herokuapp.com"
 #endif
 
 @interface KWRequest ()
