@@ -13,6 +13,9 @@
 
 @interface BSLoginViewController ()
 
+@property (nonatomic) UIActionSheet *actionSheet;
+@property (nonatomic) NSArray *twitterAccounts;
+
 @end
 
 @implementation BSLoginViewController
@@ -47,8 +50,31 @@
 - (void)twitterLogin
 {
     [[BSSession defaultSession] getTwitterAccounts:^(NSArray *accounts, NSString *error) {
-        [[BSSession defaultSession] authWithTwitterAccount:[accounts lastObject]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.twitterAccounts = accounts;
+            self.actionSheet = [self.actionSheet initWithTitle:@"Which account?" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+            
+            for (ACAccount *account in self.twitterAccounts) {
+                [self.actionSheet addButtonWithTitle:account.username];
+            }
+            
+            [self.actionSheet showInView:self.view];
+        });
     }];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [[BSSession defaultSession] authWithTwitterAccount:self.twitterAccounts[buttonIndex]];
+    [self.actionSheet dismissWithClickedButtonIndex:buttonIndex animated:YES];
+}
+
+- (UIActionSheet *)actionSheet
+{
+    if (_actionSheet == nil) {
+        _actionSheet = [[UIActionSheet alloc] init];
+    }
+    return _actionSheet;
 }
 
 @end

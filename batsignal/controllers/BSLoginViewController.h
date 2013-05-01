@@ -10,7 +10,7 @@
 
 @class BSLoginView;
 
-@interface BSLoginViewController : UIViewController
+@interface BSLoginViewController : UIViewController<UIActionSheetDelegate>
 
 @property (nonatomic) BSLoginView *loginView;
 
