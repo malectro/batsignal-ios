@@ -10,7 +10,7 @@
 
 @class BSProfileView;
 
-@interface BSProfileViewController : UIViewController
+@interface BSProfileViewController : UIViewController<UITextFieldDelegate>
 
 @property (nonatomic, readonly) BSProfileView *profileView;
 

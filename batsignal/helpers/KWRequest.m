@@ -118,14 +118,18 @@
     request.HTTPMethod = method;
     
     if (data != nil) {
-        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-        [request setValue:[NSString stringWithFormat:@"Token token=\"%@\"", @"hello"] forHTTPHeaderField:@"Authorization"];
         request.HTTPBody = data;
+    }
+    
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    if ([BSSession defaultSession].accessToken) {
+        [request setValue:[NSString stringWithFormat:@"Token token=\"%@\"", [BSSession defaultSession].accessToken] forHTTPHeaderField:@"Authorization"];
     }
     
     [NSURLConnection sendAsynchronousRequest:request queue:_operationQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-        NSLog(@"made request %d %@ %@", httpResponse.statusCode, data, error);
+        NSLog(@"made request %d %@ %@ %@", httpResponse.statusCode, httpResponse.allHeaderFields, data, error);
         
         if (httpResponse.statusCode == 403) {
             NSLog(@"session expired");

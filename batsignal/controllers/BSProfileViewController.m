@@ -40,7 +40,8 @@
 - (BSProfileView *)profileView
 {
     if (_profileView == nil) {
-        _profileView = [[BSProfileView alloc] init];
+        self.view = _profileView = [[BSProfileView alloc] init];
+        [self viewDidLoad];
     }
     return _profileView;
 }
@@ -54,6 +55,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.profileView.username.delegate = self;
     
     [self.profileView.username addTarget:self action:@selector(changedHandle) forControlEvents:UIControlEventEditingDidEnd];
     [self.profileView.logoutButton addTarget:self action:@selector(logOut) forControlEvents:UIControlEventTouchDown];
@@ -90,6 +93,14 @@
             }
         }];
     }
+}
+
+#pragma mark - textfielddelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return NO;
 }
 
 @end

@@ -45,6 +45,8 @@
         _accountStore = [[ACAccountStore alloc] init];
         
         _user = [BSUser find:[[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]];
+        _accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"accessToken"];
+        NSLog(@"access token = %@", self.accessToken);
         NSLog(@"user default id %@", [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]);
         //[self attemptToGrabTwitterAccount];
     }
@@ -92,9 +94,13 @@
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
                 });
                 
+                _accessToken = response[@"access_token"];
                 _user = [BSUser findOrCreateWithDict:response];
+                
+                [[NSUserDefaults standardUserDefaults] setObject:self.accessToken forKey:@"accessToken"];
+                [[NSUserDefaults standardUserDefaults] setObject:self.user.id forKey:@"userId"];
+                
                 [_user save];
-                [[NSUserDefaults standardUserDefaults] setValue:self.user.id forKey:@"userId"];
             }
             
             NSLog(@"user default id %@", [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]);
@@ -116,7 +122,7 @@
 - (void)expired
 {
     _user = nil;
-    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"userId"];
+    //[[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"userId"];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [[NSNotificationCenter defaultCenter] postNotificationName:@"session:expired" object:nil];

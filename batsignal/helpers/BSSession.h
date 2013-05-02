@@ -16,6 +16,7 @@
 
 @property (nonatomic) ACAccount *twitterAccount;
 @property (nonatomic, readonly) BSUser *user;
+@property (nonatomic, readonly) NSString *accessToken;
 
 + (BSSession *)defaultSession;
 + (BOOL)hasAccount;

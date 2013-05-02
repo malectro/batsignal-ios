@@ -60,6 +60,8 @@
     
     [self.mainView.postSignalButton addTarget:self action:@selector(postBeacon) forControlEvents:UIControlEventTouchDown];
     
+    [self.mainView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(genericTap)]];
+    
     [self loadBeacons];
     
     [BSBeacon fetchAll];
@@ -78,6 +80,12 @@
 }
 
 #pragma mark - custom methods
+
+- (void)genericTap
+{
+    // resign any text fields
+    //[self.mainView.profileView.username resignFirstResponder];
+}
 
 - (void)postBeacon
 {
