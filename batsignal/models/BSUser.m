@@ -33,4 +33,11 @@
              @"handle": @"handle"};
 }
 
+- (NSDictionary *)asDict
+{
+    NSMutableDictionary *dict = [[self dictionaryWithValuesForKeys:@[@"id", @"handle"]] mutableCopy];
+    
+    return dict;
+}
+
 @end

@@ -82,6 +82,7 @@
     if (![newHandle isEqualToString:@""]) {
         self.user.handle = newHandle;
         [self.user sync:^(NSDictionary *resultingUser) {
+            NSLog(@"result %@", resultingUser);
             if (resultingUser && resultingUser[@"handle"] && [self.user.handle isEqualToString:resultingUser[@"handle"]]) {
                 // success
                 [self.user save];

@@ -256,7 +256,7 @@
             model.updatedAt = dict[@"updated_at"];
             
             if (handler) {
-                handler(model);
+                handler(dict);
             }
         }];
     } else {
@@ -267,7 +267,7 @@
             model.updatedAt = dict[@"updated_at"];
             
             if (handler) {
-                handler(model);
+                handler(dict);
             }
         }];
     }
