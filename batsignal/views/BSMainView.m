@@ -15,6 +15,7 @@
 @synthesize mapView = _mapView;
 @synthesize postSignalButton = _postSignalButton;
 @synthesize profileButton = _profileButton;
+@synthesize signalTextField = _signalTextField;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,6 +24,7 @@
         [self addSubview:self.mapView];
         [self addSubview:self.postSignalButton];
         [self addSubview:self.profileButton];
+        [self addSubview:self.signalTextField];
     }
     return self;
 }
@@ -35,6 +37,7 @@
                                           self.frame.size.height - 35.0f,
                                           self.profileButton.frame.size.width,
                                           30.0f);
+    self.signalTextField.frame = CGRectMake(0.0f, -100.0f, self.frame.size.width, )
     
     // profile view sits to the right of the screen
     if (self.profileView != nil) {
@@ -88,6 +91,14 @@
         [self.profileButton addTarget:self action:@selector(presentProfile) forControlEvents:UIControlEventTouchDown];
     }
     return _profileButton;
+}
+
+- (UITextField *)signalTextField
+{
+    if (_signalTextField == nil) {
+        _signalTextField = [[UITextField alloc] init];
+    }
+    return _signalTextField;
 }
 
 - (void)setProfileView:(BSProfileView *)profileView

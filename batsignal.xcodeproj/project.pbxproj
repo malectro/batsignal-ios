@@ -286,9 +286,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86580DDC1728761900A96F4E /* batsignal */ = {
+		86580DDC1728761900A96F4E /* sygnal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86580E151728761A00A96F4E /* Build configuration list for PBXNativeTarget "batsignal" */;
+			buildConfigurationList = 86580E151728761A00A96F4E /* Build configuration list for PBXNativeTarget "sygnal" */;
 			buildPhases = (
 				7292F2B711A949FCB55BE36B /* Check Pods Manifest.lock */,
 				86580DD91728761900A96F4E /* Sources */,
@@ -300,14 +300,14 @@
 			);
 			dependencies = (
 			);
-			name = batsignal;
+			name = sygnal;
 			productName = batsignal;
 			productReference = 86580DDD1728761900A96F4E /* batsignal.app */;
 			productType = "com.apple.product-type.application";
 		};
-		86580E011728761900A96F4E /* batsignalTests */ = {
+		86580E011728761900A96F4E /* sygnalTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86580E181728761A00A96F4E /* Build configuration list for PBXNativeTarget "batsignalTests" */;
+			buildConfigurationList = 86580E181728761A00A96F4E /* Build configuration list for PBXNativeTarget "sygnalTests" */;
 			buildPhases = (
 				86580DFD1728761900A96F4E /* Sources */,
 				86580DFE1728761900A96F4E /* Frameworks */,
@@ -319,7 +319,7 @@
 			dependencies = (
 				86580E091728761A00A96F4E /* PBXTargetDependency */,
 			);
-			name = batsignalTests;
+			name = sygnalTests;
 			productName = batsignalTests;
 			productReference = 86580E021728761900A96F4E /* batsignalTests.octest */;
 			productType = "com.apple.product-type.bundle";
@@ -346,8 +346,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86580DDC1728761900A96F4E /* batsignal */,
-				86580E011728761900A96F4E /* batsignalTests */,
+				86580DDC1728761900A96F4E /* sygnal */,
+				86580E011728761900A96F4E /* sygnalTests */,
 			);
 		};
 /* End PBXProject section */
@@ -454,7 +454,7 @@
 /* Begin PBXTargetDependency section */
 		86580E091728761A00A96F4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 86580DDC1728761900A96F4E /* batsignal */;
+			target = 86580DDC1728761900A96F4E /* sygnal */;
 			targetProxy = 86580E081728761A00A96F4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -611,7 +611,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86580E151728761A00A96F4E /* Build configuration list for PBXNativeTarget "batsignal" */ = {
+		86580E151728761A00A96F4E /* Build configuration list for PBXNativeTarget "sygnal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86580E161728761A00A96F4E /* Debug */,
@@ -620,7 +620,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86580E181728761A00A96F4E /* Build configuration list for PBXNativeTarget "batsignalTests" */ = {
+		86580E181728761A00A96F4E /* Build configuration list for PBXNativeTarget "sygnalTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86580E191728761A00A96F4E /* Debug */,

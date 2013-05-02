@@ -9,13 +9,14 @@
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="BSUser" inverseName="beacons" inverseEntity="BSUser" syncable="YES"/>
     </entity>
     <entity name="BSUser" representedClassName="BSUser" syncable="YES">
+        <attribute name="handle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="beacons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BSBeacon" inverseName="user" inverseEntity="BSBeacon" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BSUser" positionX="160" positionY="192" width="128" height="105"/>
         <element name="BSBeacon" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="BSUser" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>
