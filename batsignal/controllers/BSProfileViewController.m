@@ -82,16 +82,17 @@
     if (![newHandle isEqualToString:@""]) {
         self.user.handle = newHandle;
         [self.user sync:^(NSDictionary *resultingUser) {
-            NSLog(@"result %@", resultingUser);
-            if (resultingUser && resultingUser[@"handle"] && [self.user.handle isEqualToString:resultingUser[@"handle"]]) {
-                // success
-                [self.user save];
-                self.profileView.username.textColor = [UIColor greenColor];
-            } else {
-                // failure
-                self.user.handle = oldHandle;
-                self.profileView.username.textColor = [UIColor redColor];
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (resultingUser && resultingUser[@"handle"] && [self.user.handle isEqualToString:resultingUser[@"handle"]]) {
+                    // success
+                    [self.user save];
+                    self.profileView.username.textColor = [UIColor greenColor];
+                } else {
+                    // failure
+                    self.user.handle = oldHandle;
+                    self.profileView.username.textColor = [UIColor redColor];
+                }
+            });
         }];
     }
 }
