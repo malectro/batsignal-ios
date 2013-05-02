@@ -57,7 +57,7 @@
 
 /* Begin PBXFileReference section */
 		1FEC007134244F1990D76BD4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		86580DDD1728761900A96F4E /* batsignal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = batsignal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86580DDD1728761900A96F4E /* sygnal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sygnal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86580DE01728761900A96F4E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		86580DE21728761900A96F4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		86580DE41728761900A96F4E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -164,7 +164,7 @@
 		86580DDE1728761900A96F4E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86580DDD1728761900A96F4E /* batsignal.app */,
+				86580DDD1728761900A96F4E /* sygnal.app */,
 				86580E021728761900A96F4E /* batsignalTests.octest */,
 			);
 			name = Products;
@@ -302,7 +302,7 @@
 			);
 			name = sygnal;
 			productName = batsignal;
-			productReference = 86580DDD1728761900A96F4E /* batsignal.app */;
+			productReference = 86580DDD1728761900A96F4E /* sygnal.app */;
 			productType = "com.apple.product-type.application";
 		};
 		86580E011728761900A96F4E /* sygnalTests */ = {
@@ -556,10 +556,14 @@
 			baseConfigurationReference = C831DEB9EBD943B99F6AC8A2 /* Pods.xcconfig */;
 			buildSettings = {
 				API_URL = "http://localhost:3000";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "batsignal/batsignal-Prefix.pch";
 				INFOPLIST_FILE = "batsignal/batsignal-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TWITTER_SECRET = e5jUK3v4pRmmmT9Kt5ezciFZFSiVnrgbFL9TIzjD2o;
 				WRAPPER_EXTENSION = app;
 			};

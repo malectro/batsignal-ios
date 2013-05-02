@@ -14,7 +14,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _username = [[UILabel alloc] init];
+        self.backgroundColor = [UIColor whiteColor];
+        
+        _username = [[UITextField alloc] init];
         
         _backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [_backButton setTitle:@"->" forState:UIControlStateNormal];

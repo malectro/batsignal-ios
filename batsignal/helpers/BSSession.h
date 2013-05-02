@@ -23,5 +23,6 @@
 - (void)getTwitterAccounts:(void (^)(NSArray *accounts, NSString *error))handler;
 - (void)authWithTwitterAccount:(ACAccount *)account;
 - (void)logOut;
+- (void)expired;
 
 @end

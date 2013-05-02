@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * handle;
 @property (nonatomic, retain) NSNumber * updatedAt;
 @property (nonatomic, retain) NSSet *beacons;
 

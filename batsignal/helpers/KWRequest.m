@@ -10,6 +10,8 @@
 
 #import "Reachability.h"
 
+#import "BSSession.h"
+
 #ifdef DEBUG
 #define kHostName @"http://localhost:3000"
 #else
@@ -122,7 +124,15 @@
     }
     
     [NSURLConnection sendAsynchronousRequest:request queue:_operationQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        if (callback != nil) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        NSLog(@"made request %d %@ %@", httpResponse.statusCode, data, error);
+        
+        if (httpResponse.statusCode == 403) {
+            NSLog(@"session expired");
+            [[BSSession defaultSession] expired];
+        } else if (error != nil) {
+            NSLog(@"request error %@", error);
+        } else if (httpResponse.statusCode == 200 && callback != nil) {
             callback(data);
         }
     }];

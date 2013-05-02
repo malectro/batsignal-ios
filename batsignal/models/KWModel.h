@@ -33,5 +33,6 @@
 - (void)save;
 - (void)destroy;
 - (void)sync;
+- (void)sync:(void (^) (id))handler;
 
 @end

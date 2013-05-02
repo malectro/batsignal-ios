@@ -13,6 +13,7 @@
 
 @dynamic id;
 @dynamic name;
+@dynamic handle;
 @dynamic updatedAt;
 @dynamic beacons;
 
@@ -28,7 +29,8 @@
 
 + (NSDictionary *)keyMap
 {
-    return @{@"name": @"name"};
+    return @{@"name": @"name",
+             @"handle": @"handle"};
 }
 
 @end

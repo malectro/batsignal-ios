@@ -37,7 +37,7 @@
                                           self.frame.size.height - 35.0f,
                                           self.profileButton.frame.size.width,
                                           30.0f);
-    self.signalTextField.frame = CGRectMake(0.0f, -100.0f, self.frame.size.width, )
+    self.signalTextField.frame = CGRectMake(0.0f, -100.0f, self.frame.size.width, 100.0f);
     
     // profile view sits to the right of the screen
     if (self.profileView != nil) {

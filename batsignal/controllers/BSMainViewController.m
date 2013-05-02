@@ -53,7 +53,7 @@
 {
     [super viewDidLoad];
     
-    self.mainView.profileView = _profileViewController.view;
+    self.mainView.profileView = _profileViewController.profileView;
 	
     self.mainView.mapView.showsUserLocation = YES;
     self.mainView.mapView.delegate = self;
@@ -65,9 +65,10 @@
     [BSBeacon fetchAll];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
+    [self.profileViewController viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,7 +96,10 @@
         //[self.mainView.mapView setCenterCoordinate:self.mainView.mapView.userLocation.coordinate animated:YES];
         MKCoordinateRegion coordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 1000.0f, 1000.0f);
         [self.mainView.mapView setRegion:coordinateRegion animated:YES];
-        _shouldUpdateMapCenter = NO;
+        
+        if (userLocation.coordinate.latitude != 0.0f) {
+            _shouldUpdateMapCenter = NO;
+        }
     }
 }
 

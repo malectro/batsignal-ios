@@ -242,6 +242,11 @@
 
 - (void)sync
 {
+    [self sync:nil];
+}
+
+- (void)sync:(void (^)(id))handler
+{
     __weak KWModel *model = self;
     
     if (self.id == nil) {
@@ -249,6 +254,10 @@
         [KWRequest post:[[self class] modelUrl] data:[self asDict] callback:^(id dict) {
             model.id = dict[@"id"];
             model.updatedAt = dict[@"updated_at"];
+            
+            if (handler) {
+                handler(model);
+            }
         }];
     } else {
         // update
@@ -256,6 +265,10 @@
         url = [url stringByAppendingFormat:@"/%@", self.id];
         [KWRequest put:url data:[self asDict] callback:^(id dict) {
             model.updatedAt = dict[@"updated_at"];
+            
+            if (handler) {
+                handler(model);
+            }
         }];
     }
 }

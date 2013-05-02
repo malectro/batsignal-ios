@@ -10,7 +10,7 @@
 
 @interface BSProfileView : UIView
 
-@property (nonatomic, readonly) UILabel *username;
+@property (nonatomic, readonly) UITextField *username;
 @property (nonatomic, readonly) UIButton *backButton;
 @property (nonatomic, readonly) UIButton *logoutButton;
 
