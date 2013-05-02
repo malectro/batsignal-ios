@@ -50,6 +50,7 @@
 - (void)presentMainView
 {
     self.window.rootViewController = self.mainViewController;
+    [self.mainViewController viewWillAppear:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

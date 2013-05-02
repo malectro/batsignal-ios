@@ -55,7 +55,6 @@
 {
     [super viewDidLoad];
     
-    self.profileView.username.text = self.user.handle;
     [self.profileView.username addTarget:self action:@selector(changedHandle) forControlEvents:UIControlEventEditingDidEnd];
     [self.profileView.logoutButton addTarget:self action:@selector(logOut) forControlEvents:UIControlEventTouchDown];
 }
@@ -64,6 +63,7 @@
 {
     [super viewWillAppear:animated];
     self.user = [BSSession defaultSession].user;
+    self.profileView.username.text = self.user.handle;
 }
 
 - (void)logOut
