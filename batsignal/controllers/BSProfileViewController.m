@@ -20,6 +20,8 @@
 
 @implementation BSProfileViewController
 
+@synthesize profileView = _profileView;
+
 - (id)init
 {
     self = [super initWithNibName:nil bundle:nil];
@@ -32,7 +34,15 @@
 
 - (void)loadView
 {
-    self.view = _profileView = [[BSProfileView alloc] init];
+    self.view = self.profileView;
+}
+
+- (BSProfileView *)profileView
+{
+    if (_profileView == nil) {
+        _profileView = [[BSProfileView alloc] init];
+    }
+    return _profileView;
 }
 
 - (void)didReceiveMemoryWarning

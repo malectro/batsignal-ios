@@ -17,6 +17,7 @@
         self.backgroundColor = [UIColor whiteColor];
         
         _username = [[UITextField alloc] init];
+        [self addSubview:_username];
         
         _backButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [_backButton setTitle:@"->" forState:UIControlStateNormal];

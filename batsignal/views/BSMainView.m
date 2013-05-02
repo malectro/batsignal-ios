@@ -47,6 +47,7 @@
 
 - (void)presentProfile
 {
+    self.profileView.frame = CGRectMake(self.frame.size.width, 0.0f, self.frame.size.width / 2.0f, self.frame.size.height);
     [UIView animateWithDuration:0.2f animations:^{
         self.profileView.frame = CGRectOffset(self.profileView.frame, -self.profileView.frame.size.width, 0.0f);
     }];
