@@ -10,6 +10,7 @@
 
 #import "BSAppDelegate.h"
 #import "BSMainView.h"
+#import "BSPostSignalView.h"
 #import "BSProfileViewController.h"
 #import "BSUser.h"
 #import "BSBeacon.h"
@@ -90,6 +91,7 @@
 - (void)postBeacon
 {
     [self.mainView presentPostSignalView];
+    [self.mainView.postSignalView.textField becomeFirstResponder];
     return;
     BSBeacon *beacon = [BSBeacon create];
     beacon.user = [BSSession defaultSession].user;

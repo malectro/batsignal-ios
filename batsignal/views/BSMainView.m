@@ -46,7 +46,7 @@
                                           self.profileButton.frame.size.width,
                                           30.0f);
     
-    self.postSignalView.frame = CGRectMake(0.0f, self.frame.size.height, self.frame.size.width, self.frame.size.height);
+    self.postSignalView.frame = CGRectMake(0.0f, self.frame.size.height, self.frame.size.width, self.frame.size.height - 218.0f);
     
     // profile view sits to the right of the screen
     if (self.profileView != nil) {

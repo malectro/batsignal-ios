@@ -15,9 +15,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         _textFieldBg = [[UIView alloc] init];
+        _textFieldBg.backgroundColor = [UIColor whiteColor];
         [self addSubview:_textFieldBg];
         
         _textField = [[UITextField alloc] init];
+        _textField.placeholder = @"What's happening?";
         [self addSubview:_textField];
         
         _cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
