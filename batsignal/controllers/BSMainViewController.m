@@ -115,6 +115,7 @@
 {
     [self.mainView.postSignalView.textField resignFirstResponder];
     [self.mainView hidePostSignalView];
+    [self.currentBeacon destroy:NO];
 }
 
 #pragma mark - MKMapViewDelegate methods

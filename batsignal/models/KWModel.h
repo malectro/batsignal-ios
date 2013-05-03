@@ -31,7 +31,7 @@
 - (void)customUpdate:(NSDictionary *)dict;
 
 - (void)save;
-- (void)destroy;
+- (void)destroy:(BOOL)forRealz;
 - (void)sync;
 - (void)sync:(void (^) (id))handler;
 

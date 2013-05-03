@@ -233,11 +233,14 @@
     }
 }
 
-- (void)destroy
+- (void)destroy:(BOOL)forRealz
 {
     // kill self
     [[BSAppDelegate moc] deleteObject:self];
-    [self save];
+    
+    if (forRealz) {
+        [self save];
+    }
 }
 
 - (void)sync
