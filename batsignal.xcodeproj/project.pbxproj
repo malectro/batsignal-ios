@@ -570,7 +570,7 @@
 				GCC_PREFIX_HEADER = "batsignal/batsignal-Prefix.pch";
 				INFOPLIST_FILE = "batsignal/batsignal-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TWITTER_SECRET = e5jUK3v4pRmmmT9Kt5ezciFZFSiVnrgbFL9TIzjD2o;
+				TWITTER_SECRET = e5jUK3v4pRq86SDfl7do2ACSFSiVnrgbFL9TIzjD2o;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -588,7 +588,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TWITTER_SECRET = e5jUK3v4pRmmmT9Kt5ezciFZFSiVnrgbFL9TIzjD2o;
+				TWITTER_SECRET = e5jUK3v4pRq86SDfl7do2ACSFSiVnrgbFL9TIzjD2o;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

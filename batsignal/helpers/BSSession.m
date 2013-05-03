@@ -38,6 +38,21 @@
     return [BSSession defaultSession].user != nil;
 }
 
+- (NSString *)tehKey
+{
+    static NSString *tehKey = nil;
+    
+    if (tehKey == nil) {
+        NSString *partOne = @"e5jUK3v4pRm";
+        NSString *partThree = @"gbFL9TIzjD2o";
+        NSString *partTwo = @"mmT9Kt5ezciFZFSiVnr";
+        
+        tehKey = [NSString stringWithFormat:@"%@%@%@", partOne, partTwo, partThree];
+    }
+    
+    return tehKey;
+}
+
 - (id)init
 {
     self = [super init];
@@ -83,7 +98,7 @@
 {
     self.twitterAccount = account;
     
-    [TWAPIManager registerTwitterAppKey:@"YtG2yx3ltHAFx7RtXtKoA" andAppSecret:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"TWITTER_SECRET"]];
+    [TWAPIManager registerTwitterAppKey:@"YtG2yx3ltHAFx7RtXtKoA" andAppSecret:[self tehKey]];
     [TWAPIManager performReverseAuthForAccount:self.twitterAccount withHandler:^(NSData *responseData, NSError *error) {
         NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
         NSString *path = [NSString stringWithFormat:@"/auth/twitter_reverse/callback?%@", string];
