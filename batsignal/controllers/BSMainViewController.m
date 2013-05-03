@@ -100,6 +100,7 @@
     self.currentBeacon = [BSBeacon create];
     self.currentBeacon.user = [BSSession defaultSession].user;
     self.currentBeacon.coordinate = self.mainView.mapView.userLocation.coordinate;
+    self.currentBeacon.updatedAt = [NSNumber numberWithInteger:[[NSDate date] timeIntervalSince1970]];
 }
 
 - (void)postBeacon
@@ -109,6 +110,12 @@
         // probably should do some error handling here
         [self.currentBeacon save];
     }];
+    
+    [self.mainView.postSignalView.textField resignFirstResponder];
+    [self.mainView hidePostSignalView];
+    
+    [self.mainView.mapView selectAnnotation:self.currentBeacon animated:YES];
+    self.currentBeacon = nil;
 }
 
 - (void)cancelBeacon
@@ -120,7 +127,7 @@
 
 #pragma mark - MKMapViewDelegate methods
 
-- (void)mapView:mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     if (_shouldUpdateMapCenter) {
         //[self.mainView.mapView setCenterCoordinate:self.mainView.mapView.userLocation.coordinate animated:YES];
@@ -131,6 +138,39 @@
             _shouldUpdateMapCenter = NO;
         }
     }
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState
+{
+    if (view.annotation == self.currentBeacon) {
+
+    }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    static NSString *beaconId = @"beacon";
+    
+    NSString *identifier = beaconId;
+    
+    if (annotation == mapView.userLocation) {
+        return nil;
+    }
+    
+    MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if (annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        annotationView.canShowCallout = YES;
+    }
+    
+    annotationView.annotation = annotation;
+    
+    if (annotation == self.currentBeacon) {
+        annotationView.draggable = YES;
+    }
+    
+    return annotationView;
 }
 
 #pragma mark - data methods
