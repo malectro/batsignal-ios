@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BSPostSignalView : UIView
+#import "KWViewGroup.h"
+
+@interface BSPostSignalView : KWViewGroup
 
 @property (nonatomic, readonly) UIView *textFieldBg;
 @property (nonatomic, readonly) UITextField *textField;

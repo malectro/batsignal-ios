@@ -28,6 +28,7 @@
 		8691F4171733F2EE000802FB /* BSPostSignalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8691F4161733F2EE000802FB /* BSPostSignalView.m */; };
 		8691F41A1734062E000802FB /* KWFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8691F4191734062E000802FB /* KWFunctions.m */; };
 		8691F41D17340698000802FB /* KWAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8691F41C17340697000802FB /* KWAlert.m */; };
+		8691F420173411EC000802FB /* KWViewGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8691F41F173411EC000802FB /* KWViewGroup.m */; };
 		86B4BE7817297BB10009A090 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE7717297BB10009A090 /* Twitter.framework */; };
 		86B4BE7C17297C280009A090 /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7B17297C280009A090 /* BSLoginViewController.m */; };
 		86B4BE8017297C530009A090 /* BSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7F17297C530009A090 /* BSLoginView.m */; };
@@ -87,6 +88,8 @@
 		8691F4191734062E000802FB /* KWFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KWFunctions.m; path = helpers/KWFunctions.m; sourceTree = "<group>"; };
 		8691F41B17340697000802FB /* KWAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KWAlert.h; path = helpers/KWAlert.h; sourceTree = "<group>"; };
 		8691F41C17340697000802FB /* KWAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KWAlert.m; path = helpers/KWAlert.m; sourceTree = "<group>"; };
+		8691F41E173411EC000802FB /* KWViewGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KWViewGroup.h; path = views/KWViewGroup.h; sourceTree = "<group>"; };
+		8691F41F173411EC000802FB /* KWViewGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KWViewGroup.m; path = views/KWViewGroup.m; sourceTree = "<group>"; };
 		86B4BE7717297BB10009A090 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		86B4BE7A17297C280009A090 /* BSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoginViewController.h; path = controllers/BSLoginViewController.h; sourceTree = "<group>"; };
 		86B4BE7B17297C280009A090 /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginViewController.m; path = controllers/BSLoginViewController.m; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				86B4BEA9173082050009A090 /* BSProfileView.m */,
 				8691F4151733F2EE000802FB /* BSPostSignalView.h */,
 				8691F4161733F2EE000802FB /* BSPostSignalView.m */,
+				8691F41E173411EC000802FB /* KWViewGroup.h */,
+				8691F41F173411EC000802FB /* KWViewGroup.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				8691F4171733F2EE000802FB /* BSPostSignalView.m in Sources */,
 				8691F41A1734062E000802FB /* KWFunctions.m in Sources */,
 				8691F41D17340698000802FB /* KWAlert.m in Sources */,
+				8691F420173411EC000802FB /* KWViewGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

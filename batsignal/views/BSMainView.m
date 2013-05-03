@@ -9,6 +9,7 @@
 #import "BSMainView.h"
 
 #import "KWFunctions.h"
+#import "KWViewGroup.h"
 #import "BSProfileView.h"
 #import "BSPostSignalView.h"
 
@@ -40,7 +41,7 @@
 - (void)layoutSubviews
 {
     self.mapView.frame = self.frame;
-    self.mainControlPanel.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height);
+    self.mainControlPanel.frame = CGRectMake(0.0f, self.frame.size.height - 40.0f, self.frame.size.width, 40.0f);
     self.postSignalButton.center = CGPointMake(self.mainControlPanel.frame.size.width / 2.0f, self.mainControlPanel.frame.size.height - 30.0f);
     self.profileButton.frame = CGRectMake(self.mainControlPanel.frame.size.width - self.profileButton.frame.size.width - 10.0f,
                                           self.mainControlPanel.frame.size.height - 35.0f,
@@ -67,7 +68,7 @@
 - (void)hideProfile
 {
     [UIView animateWithDuration:0.2f animations:^{
-        self.mainControlPanel.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height);
+        self.mainControlPanel.frame = CGRectPosition(self.mainControlPanel.frame, 0.0f, self.frame.size.height - 40.0f);
         self.profileView.frame = CGRectMake(self.frame.size.width, 0.0f, self.frame.size.width / 2.0f, self.frame.size.height);
     }];
 }
@@ -75,15 +76,18 @@
 - (void)presentPostSignalView
 {
     [UIView animateWithDuration:0.2f animations:^{
-        self.mainControlPanel.frame = CGRectMake(0.0f, -self.frame.size.height, self.frame.size.width, self.frame.size.height);
+        self.mainControlPanel.frame = CGRectPosition(self.mainControlPanel.frame, 0.0f, -self.frame.size.height);
         self.postSignalView.frame = CGRectPosition(self.postSignalView.frame, 0.0f, 0.0f);
     }];
 }
 
 - (void)hidePostSignalView
 {
+    [self addSubview:self.mapView];
+    [self sendSubviewToBack:self.mapView];
+    
     [UIView animateWithDuration:0.2f animations:^{
-        self.mainControlPanel.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height);
+        self.mainControlPanel.frame = CGRectPosition(self.mainControlPanel.frame, 0.0f, self.frame.size.height - 40.0f);
         self.postSignalView.frame = CGRectPosition(self.postSignalView.frame, 0.0f, self.frame.size.height);
     }];
 }

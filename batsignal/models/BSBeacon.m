@@ -64,12 +64,11 @@
 
 - (NSString *)title
 {
-    return self.user.name;
+    return self.user.handle;
 }
 
 - (NSString *)subtitle
 {
-    return @"party time!";
     return self.text;
 }
 

@@ -10,6 +10,7 @@
 
 #import "BSAppDelegate.h"
 #import "BSMainView.h"
+#import "KWViewGroup.h"
 #import "BSPostSignalView.h"
 #import "BSProfileViewController.h"
 #import "BSUser.h"
@@ -62,7 +63,7 @@
     
     [self.mainView.postSignalButton addTarget:self action:@selector(newBeacon) forControlEvents:UIControlEventTouchDown];
     
-    [self.mainView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(genericTap)]];
+    //[self.mainView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(genericTap)]];
     
     [self loadBeacons];
     
@@ -172,7 +173,6 @@
     NSArray *beacons = self.fetchedResultsController.fetchedObjects;
     
     NSLog(@"beacons %@", beacons);
-    NSLog(@"user name %@", [BSSession defaultSession].user.name);
     
     [self.mainView.mapView removeAnnotations:self.groupedBeacons];
     
