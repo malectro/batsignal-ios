@@ -25,6 +25,7 @@
 		86580E071728761900A96F4E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86580DE61728761900A96F4E /* CoreData.framework */; };
 		86580E0F1728761A00A96F4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86580E0D1728761A00A96F4E /* InfoPlist.strings */; };
 		86580E121728761A00A96F4E /* batsignalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86580E111728761A00A96F4E /* batsignalTests.m */; };
+		8691F4171733F2EE000802FB /* BSPostSignalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8691F4161733F2EE000802FB /* BSPostSignalView.m */; };
 		86B4BE7817297BB10009A090 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B4BE7717297BB10009A090 /* Twitter.framework */; };
 		86B4BE7C17297C280009A090 /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7B17297C280009A090 /* BSLoginViewController.m */; };
 		86B4BE8017297C530009A090 /* BSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B4BE7F17297C530009A090 /* BSLoginView.m */; };
@@ -78,6 +79,8 @@
 		86580E0E1728761A00A96F4E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		86580E101728761A00A96F4E /* batsignalTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = batsignalTests.h; sourceTree = "<group>"; };
 		86580E111728761A00A96F4E /* batsignalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = batsignalTests.m; sourceTree = "<group>"; };
+		8691F4151733F2EE000802FB /* BSPostSignalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSPostSignalView.h; path = views/BSPostSignalView.h; sourceTree = "<group>"; };
+		8691F4161733F2EE000802FB /* BSPostSignalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSPostSignalView.m; path = views/BSPostSignalView.m; sourceTree = "<group>"; };
 		86B4BE7717297BB10009A090 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		86B4BE7A17297C280009A090 /* BSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BSLoginViewController.h; path = controllers/BSLoginViewController.h; sourceTree = "<group>"; };
 		86B4BE7B17297C280009A090 /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BSLoginViewController.m; path = controllers/BSLoginViewController.m; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				86B4BE95172EC8FF0009A090 /* BSMainView.m */,
 				86B4BEA8173082050009A090 /* BSProfileView.h */,
 				86B4BEA9173082050009A090 /* BSProfileView.m */,
+				8691F4151733F2EE000802FB /* BSPostSignalView.h */,
+				8691F4161733F2EE000802FB /* BSPostSignalView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				86B4BEA5172F079B0009A090 /* BSBeacon.m in Sources */,
 				86B4BEAA173082050009A090 /* BSProfileView.m in Sources */,
 				86B4BEAD1730821A0009A090 /* BSProfileViewController.m in Sources */,
+				8691F4171733F2EE000802FB /* BSPostSignalView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

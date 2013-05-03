@@ -9,22 +9,29 @@
 #import "BSMainView.h"
 
 #import "BSProfileView.h"
+#import "BSPostSignalView.h"
+
+@interface BSMainView ()
+
+@property (nonatomic) UIView *mainControlPanel;
+
+@end
 
 @implementation BSMainView
 
 @synthesize mapView = _mapView;
 @synthesize postSignalButton = _postSignalButton;
 @synthesize profileButton = _profileButton;
-@synthesize signalTextField = _signalTextField;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.mapView];
-        [self addSubview:self.postSignalButton];
-        [self addSubview:self.profileButton];
-        [self addSubview:self.signalTextField];
+        [self.mainControlPanel addSubview:self.postSignalButton];
+        [self.mainControlPanel addSubview:self.profileButton];
+        [self addSubview:self.mainControlPanel];
+        [self addSubview:self.postSignalView];
     }
     return self;
 }
@@ -32,12 +39,14 @@
 - (void)layoutSubviews
 {
     self.mapView.frame = self.frame;
-    self.postSignalButton.center = CGPointMake(self.frame.size.width / 2.0f, self.frame.size.height - 30.0f);
-    self.profileButton.frame = CGRectMake(self.frame.size.width - self.profileButton.frame.size.width - 10.0f,
-                                          self.frame.size.height - 35.0f,
+    self.mainControlPanel.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height);
+    self.postSignalButton.center = CGPointMake(self.mainControlPanel.frame.size.width / 2.0f, self.mainControlPanel.frame.size.height - 30.0f);
+    self.profileButton.frame = CGRectMake(self.mainControlPanel.frame.size.width - self.profileButton.frame.size.width - 10.0f,
+                                          self.mainControlPanel.frame.size.height - 35.0f,
                                           self.profileButton.frame.size.width,
                                           30.0f);
-    self.signalTextField.frame = CGRectMake(0.0f, -100.0f, self.frame.size.width, 100.0f);
+    
+    self.postSignalView.frame = CGRectMake(0.0f, self.frame.size.height, self.frame.size.width, self.frame.size.height);
     
     // profile view sits to the right of the screen
     if (self.profileView != nil) {
@@ -49,6 +58,7 @@
 {
     self.profileView.frame = CGRectMake(self.frame.size.width, 0.0f, self.frame.size.width / 2.0f, self.frame.size.height);
     [UIView animateWithDuration:0.2f animations:^{
+        self.mainControlPanel.frame = CGRectMake(-self.frame.size.width, 0.0f, self.frame.size.width, self.frame.size.height);
         self.profileView.frame = CGRectOffset(self.profileView.frame, -self.profileView.frame.size.width, 0.0f);
     }];
 }
@@ -56,7 +66,24 @@
 - (void)hideProfile
 {
     [UIView animateWithDuration:0.2f animations:^{
+        self.mainControlPanel.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height);
         self.profileView.frame = CGRectMake(self.frame.size.width, 0.0f, self.frame.size.width / 2.0f, self.frame.size.height);
+    }];
+}
+
+- (void)presentPostSignalView
+{
+    [UIView animateWithDuration:0.2f animations:^{
+        self.mainControlPanel.frame = CGRectMake(0.0f, -self.frame.size.height, self.frame.size.width, self.frame.size.height);
+        self.postSignalView.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height);
+    }];
+}
+
+- (void)hidePostSignalView
+{
+    [UIView animateWithDuration:0.2f animations:^{
+        self.mainControlPanel.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height);
+        self.postSignalView.frame = CGRectMake(0.0f, self.frame.size.height, self.frame.size.width, self.frame.size.height);
     }];
 }
 
@@ -94,12 +121,21 @@
     return _profileButton;
 }
 
-- (UITextField *)signalTextField
+- (BSPostSignalView *)postSignalView
 {
-    if (_signalTextField == nil) {
-        _signalTextField = [[UITextField alloc] init];
+    if (_postSignalView == nil) {
+        _postSignalView = [[BSPostSignalView alloc] init];
     }
-    return _signalTextField;
+    
+    return _postSignalView;
+}
+
+- (UIView *)mainControlPanel
+{
+    if (_mainControlPanel == nil) {
+        _mainControlPanel = [[UIView alloc] init];
+    }
+    return _mainControlPanel;
 }
 
 - (void)setProfileView:(BSProfileView *)profileView

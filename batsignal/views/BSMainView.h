@@ -10,14 +10,18 @@
 #import <MapKit/MapKit.h>
 
 @class BSProfileView;
+@class BSPostSignalView;
 
 @interface BSMainView : UIView
 
 @property (nonatomic, readonly) MKMapView *mapView;
 @property (nonatomic, readonly) UIButton *postSignalButton;
 @property (nonatomic, readonly) UIButton *profileButton;
-@property (nonatomic, readonly) UITextField *signalTextField;
 
+@property (nonatomic) BSPostSignalView *postSignalView;
 @property (nonatomic) BSProfileView *profileView;
+
+- (void)presentPostSignalView;
+- (void)hidePostSignalView;
 
 @end

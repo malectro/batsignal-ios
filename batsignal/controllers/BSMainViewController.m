@@ -89,6 +89,8 @@
 
 - (void)postBeacon
 {
+    [self.mainView presentPostSignalView];
+    return;
     BSBeacon *beacon = [BSBeacon create];
     beacon.user = [BSSession defaultSession].user;
     beacon.coordinate = self.mainView.mapView.userLocation.coordinate;
