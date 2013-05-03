@@ -8,6 +8,7 @@
 
 #import "BSMainView.h"
 
+#import "KWFunctions.h"
 #import "BSProfileView.h"
 #import "BSPostSignalView.h"
 
@@ -58,7 +59,7 @@
 {
     self.profileView.frame = CGRectMake(self.frame.size.width, 0.0f, self.frame.size.width / 2.0f, self.frame.size.height);
     [UIView animateWithDuration:0.2f animations:^{
-        self.mainControlPanel.frame = CGRectMake(-self.frame.size.width, 0.0f, self.frame.size.width, self.frame.size.height);
+        self.mainControlPanel.frame = CGRectPosition(self.mainControlPanel.frame, -self.frame.size.width, 0.0f);
         self.profileView.frame = CGRectOffset(self.profileView.frame, -self.profileView.frame.size.width, 0.0f);
     }];
 }
@@ -75,7 +76,7 @@
 {
     [UIView animateWithDuration:0.2f animations:^{
         self.mainControlPanel.frame = CGRectMake(0.0f, -self.frame.size.height, self.frame.size.width, self.frame.size.height);
-        self.postSignalView.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height);
+        self.postSignalView.frame = CGRectPosition(self.postSignalView.frame, 0.0f, 0.0f);
     }];
 }
 
@@ -83,7 +84,7 @@
 {
     [UIView animateWithDuration:0.2f animations:^{
         self.mainControlPanel.frame = CGRectMake(0.0f, 0.0f, self.frame.size.width, self.frame.size.height);
-        self.postSignalView.frame = CGRectMake(0.0f, self.frame.size.height, self.frame.size.width, self.frame.size.height);
+        self.postSignalView.frame = CGRectPosition(self.postSignalView.frame, 0.0f, self.frame.size.height);
     }];
 }
 

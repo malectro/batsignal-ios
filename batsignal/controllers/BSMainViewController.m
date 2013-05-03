@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) NSFetchRequest *fetchRequest;
 @property (nonatomic) NSMutableDictionary *userIdCache;
 @property (nonatomic) NSMutableArray *groupedBeacons;
+@property (nonatomic) BSBeacon *currentBeacon;
 
 @end
 
@@ -59,13 +60,16 @@
     self.mainView.mapView.showsUserLocation = YES;
     self.mainView.mapView.delegate = self;
     
-    [self.mainView.postSignalButton addTarget:self action:@selector(postBeacon) forControlEvents:UIControlEventTouchDown];
+    [self.mainView.postSignalButton addTarget:self action:@selector(newBeacon) forControlEvents:UIControlEventTouchDown];
     
     [self.mainView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(genericTap)]];
     
     [self loadBeacons];
     
     [BSBeacon fetchAll];
+    
+    [self.mainView.postSignalView.cancelButton addTarget:self action:@selector(cancelBeacon) forControlEvents:UIControlEventTouchDown];
+    [self.mainView.postSignalView.postButton addTarget:self action:@selector(postBeacon) forControlEvents:UIControlEventTouchDown];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,16 +92,28 @@
     //[self.mainView.profileView.username resignFirstResponder];
 }
 
-- (void)postBeacon
+- (void)newBeacon
 {
     [self.mainView presentPostSignalView];
     [self.mainView.postSignalView.textField becomeFirstResponder];
-    return;
-    BSBeacon *beacon = [BSBeacon create];
-    beacon.user = [BSSession defaultSession].user;
-    beacon.coordinate = self.mainView.mapView.userLocation.coordinate;
-    [beacon save];
-    [beacon sync];
+    self.currentBeacon = [BSBeacon create];
+    self.currentBeacon.user = [BSSession defaultSession].user;
+    self.currentBeacon.coordinate = self.mainView.mapView.userLocation.coordinate;
+}
+
+- (void)postBeacon
+{
+    self.currentBeacon.text = self.mainView.postSignalView.textField.text;
+    [self.currentBeacon sync:^(id stuff) {
+        // probably should do some error handling here
+        [self.currentBeacon save];
+    }];
+}
+
+- (void)cancelBeacon
+{
+    [self.mainView.postSignalView.textField resignFirstResponder];
+    [self.mainView hidePostSignalView];
 }
 
 #pragma mark - MKMapViewDelegate methods
