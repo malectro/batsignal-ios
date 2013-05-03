@@ -24,6 +24,7 @@
 @property (nonatomic) NSMutableDictionary *userIdCache;
 @property (nonatomic) NSMutableArray *groupedBeacons;
 @property (nonatomic) BSBeacon *currentBeacon;
+@property (nonatomic) BSBeacon *beaconToSelect;
 
 @end
 
@@ -115,6 +116,7 @@
     [self.mainView hidePostSignalView];
     
     [self.mainView.mapView selectAnnotation:self.currentBeacon animated:YES];
+    self.beaconToSelect = self.currentBeacon;
     self.currentBeacon = nil;
 }
 
@@ -137,13 +139,6 @@
         if (userLocation.coordinate.latitude != 0.0f) {
             _shouldUpdateMapCenter = NO;
         }
-    }
-}
-
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState
-{
-    if (view.annotation == self.currentBeacon) {
-
     }
 }
 
@@ -228,6 +223,11 @@
     }
     
     [self.mainView.mapView addAnnotations:self.groupedBeacons];
+    
+    if (self.beaconToSelect) {
+        [self.mainView.mapView selectAnnotation:self.beaconToSelect animated:YES];
+        self.beaconToSelect = nil;
+    }
 }
 
 @end
