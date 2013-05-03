@@ -164,7 +164,7 @@
 
 - (NSArray *)sortDescriptors
 {
-    return @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:YES]];
+    return @[[NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:NO]];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
