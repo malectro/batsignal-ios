@@ -98,6 +98,9 @@
 {
     [self.mainView presentPostSignalView];
     [self.mainView.postSignalView.textField becomeFirstResponder];
+    
+    [self zoomOnUser];
+    
     self.currentBeacon = [BSBeacon create];
     self.currentBeacon.user = [BSSession defaultSession].user;
     self.currentBeacon.coordinate = self.mainView.mapView.userLocation.coordinate;
@@ -114,6 +117,7 @@
     
     [self.mainView.postSignalView.textField resignFirstResponder];
     [self.mainView hidePostSignalView];
+    [self panOutOnUser];
     
     [self.mainView.mapView selectAnnotation:self.currentBeacon animated:YES];
     self.beaconToSelect = self.currentBeacon;
@@ -124,7 +128,20 @@
 {
     [self.mainView.postSignalView.textField resignFirstResponder];
     [self.mainView hidePostSignalView];
+    [self panOutOnUser];
     [self.currentBeacon destroy:NO];
+}
+
+- (void)zoomOnUser
+{
+    MKCoordinateRegion coordinateRegion = MKCoordinateRegionMakeWithDistance(self.mainView.mapView.userLocation.coordinate, 1000.0f, 1000.0f);
+    [self.mainView.mapView setRegion:coordinateRegion animated:YES];
+}
+
+- (void)panOutOnUser
+{
+    MKCoordinateRegion coordinateRegion = MKCoordinateRegionMakeWithDistance(self.mainView.mapView.userLocation.coordinate, 8000.0f, 8000.0f);
+    [self.mainView.mapView setRegion:coordinateRegion animated:YES];
 }
 
 #pragma mark - MKMapViewDelegate methods
@@ -133,8 +150,7 @@
 {
     if (_shouldUpdateMapCenter) {
         //[self.mainView.mapView setCenterCoordinate:self.mainView.mapView.userLocation.coordinate animated:YES];
-        MKCoordinateRegion coordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 1000.0f, 1000.0f);
-        [self.mainView.mapView setRegion:coordinateRegion animated:YES];
+        [self panOutOnUser];
         
         if (userLocation.coordinate.latitude != 0.0f) {
             _shouldUpdateMapCenter = NO;

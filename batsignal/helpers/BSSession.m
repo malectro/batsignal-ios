@@ -43,9 +43,9 @@
     static NSString *tehKey = nil;
     
     if (tehKey == nil) {
-        NSString *partOne = @"e5jUK3v4pRm";
-        NSString *partThree = @"gbFL9TIzjD2o";
-        NSString *partTwo = @"mmT9Kt5ezciFZFSiVnr";
+        NSString *partOne = @"J9SUcmsVhr03";
+        NSString *partThree = @"YvRM3Db15bM";
+        NSString *partTwo = @"beNXyDGmFKNDuc6zrU45";
         
         tehKey = [NSString stringWithFormat:@"%@%@%@", partOne, partTwo, partThree];
     }
@@ -98,7 +98,7 @@
 {
     self.twitterAccount = account;
     
-    [TWAPIManager registerTwitterAppKey:@"YtG2yx3ltHAFx7RtXtKoA" andAppSecret:[self tehKey]];
+    [TWAPIManager registerTwitterAppKey:@"hJBWH6EtXOEZaC2AZbxQA" andAppSecret:[self tehKey]];
     [TWAPIManager performReverseAuthForAccount:self.twitterAccount withHandler:^(NSData *responseData, NSError *error) {
         NSString *string = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
         NSString *path = [NSString stringWithFormat:@"/auth/twitter_reverse/callback?%@", string];
@@ -107,15 +107,15 @@
             if (response && response[@"id"]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
+                    
+                    _accessToken = response[@"access_token"];
+                    _user = [BSUser findOrCreateWithDict:response];
+                    
+                    [[NSUserDefaults standardUserDefaults] setObject:self.accessToken forKey:@"accessToken"];
+                    [[NSUserDefaults standardUserDefaults] setObject:self.user.id forKey:@"userId"];
+                    
+                    [_user save];
                 });
-                
-                _accessToken = response[@"access_token"];
-                _user = [BSUser findOrCreateWithDict:response];
-                
-                [[NSUserDefaults standardUserDefaults] setObject:self.accessToken forKey:@"accessToken"];
-                [[NSUserDefaults standardUserDefaults] setObject:self.user.id forKey:@"userId"];
-                
-                [_user save];
             }
             
             NSLog(@"user default id %@", [[NSUserDefaults standardUserDefaults] stringForKey:@"userId"]);
