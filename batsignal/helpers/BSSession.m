@@ -106,10 +106,10 @@
         [KWRequest get:path callback:^(NSDictionary *response) {
             if (response && response[@"id"]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
-                    
                     _accessToken = response[@"access_token"];
                     _user = [BSUser findOrCreateWithDict:response];
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"session:authed" object:nil];
                     
                     [[NSUserDefaults standardUserDefaults] setObject:self.accessToken forKey:@"accessToken"];
                     [[NSUserDefaults standardUserDefaults] setObject:self.user.id forKey:@"userId"];

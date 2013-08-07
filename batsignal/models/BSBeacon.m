@@ -64,11 +64,7 @@
 
 - (NSString *)title
 {
-    if (self.user.name) {
-        return self.user.name;
-    } else {
-        return self.user.handle;
-    }
+    return self.user.handle;
 }
 
 - (NSString *)subtitle

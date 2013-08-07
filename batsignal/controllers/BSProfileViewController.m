@@ -66,6 +66,7 @@
 {
     [super viewWillAppear:animated];
     self.user = [BSSession defaultSession].user;
+    NSLog(@"profile view! %@", self.user);
     self.profileView.username.text = self.user.handle;
 }
 
