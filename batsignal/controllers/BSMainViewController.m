@@ -63,12 +63,12 @@
     self.mainView.mapView.delegate = self;
     
     [self.mainView.postSignalButton addTarget:self action:@selector(newBeacon) forControlEvents:UIControlEventTouchDown];
+    [self.mainView.refreshButton addTarget:self action:@selector(refresh) forControlEvents:UIControlEventTouchDown];
     
     //[self.mainView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(genericTap)]];
     
     [self loadBeacons];
-    
-    [BSBeacon fetchAll];
+    [self refresh];
     
     [self.mainView.postSignalView.cancelButton addTarget:self action:@selector(cancelBeacon) forControlEvents:UIControlEventTouchDown];
     [self.mainView.postSignalView.postButton addTarget:self action:@selector(postBeacon) forControlEvents:UIControlEventTouchDown];
@@ -77,6 +77,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self refresh];
     [self.profileViewController viewWillAppear:animated];
 }
 
@@ -87,6 +88,11 @@
 }
 
 #pragma mark - custom methods
+
+- (void)refresh
+{
+    [BSBeacon fetchAll];
+}
 
 - (void)genericTap
 {

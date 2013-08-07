@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) MKMapView *mapView;
 @property (nonatomic, readonly) UIButton *postSignalButton;
 @property (nonatomic, readonly) UIButton *profileButton;
+@property (nonatomic, readonly) UIButton *refreshButton;
 
 @property (nonatomic) BSPostSignalView *postSignalView;
 @property (nonatomic) BSProfileView *profileView;

@@ -24,6 +24,7 @@
 @synthesize mapView = _mapView;
 @synthesize postSignalButton = _postSignalButton;
 @synthesize profileButton = _profileButton;
+@synthesize refreshButton = _refreshButton;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -32,6 +33,7 @@
         [self addSubview:self.mapView];
         [self.mainControlPanel addSubview:self.postSignalButton];
         [self.mainControlPanel addSubview:self.profileButton];
+        [self.mainControlPanel addSubview:self.refreshButton];
         [self addSubview:self.mainControlPanel];
         [self addSubview:self.postSignalView];
     }
@@ -49,6 +51,10 @@
                                           30.0f);
     
     self.postSignalView.frame = CGRectMake(0.0f, self.frame.size.height, self.frame.size.width, self.frame.size.height - 218.0f);
+    self.refreshButton.frame = CGRectMake(self.mainControlPanel.frame.size.width - self.refreshButton.frame.size.width - 10.0f,
+                                          10.0f,
+                                          self.refreshButton.frame.size.width,
+                                          30.0f);
     
     // profile view sits to the right of the screen
     if (self.profileView != nil) {
@@ -124,6 +130,18 @@
         [self.profileButton addTarget:self action:@selector(presentProfile) forControlEvents:UIControlEventTouchDown];
     }
     return _profileButton;
+}
+
+- (UIButton *)refreshButton
+{
+    if (_refreshButton == nil) {
+        _refreshButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [_refreshButton setTitle:@"refresh" forState:UIControlStateNormal];
+        _refreshButton.titleLabel.font = [UIFont systemFontOfSize:26.0f];
+        [_refreshButton sizeToFit];
+    }
+    
+    return _refreshButton;
 }
 
 - (BSPostSignalView *)postSignalView
