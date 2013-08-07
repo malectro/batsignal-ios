@@ -116,11 +116,22 @@
     [self fetchUrl:url handler:nil];
 }
 
+// for now, this method will delete irrelevant info from the store to keep data from gettings stale
+// there should be a better long-term solution for this.
 + (void)fetchUrl:(NSString *)url handler:(void (^)(NSArray *))handler
 {
     [KWRequest get:url callback:^(NSArray *models) {
+        NSMutableSet *all = [NSMutableSet setWithArray:[self all]];
+        NSMutableSet *newModels = [NSMutableSet setWithCapacity:[all count]];
+        
         for (NSDictionary *dict in models) {
-            [self findOrCreateWithDict:dict];
+            [newModels addObject:[self findOrCreateWithDict:dict]];
+        }
+        
+        [all minusSet:newModels];
+        
+        for (KWModel *model in all) {
+            [[BSAppDelegate moc] deleteObject:model];
         }
         
         [[BSAppDelegate moc] save:nil];
