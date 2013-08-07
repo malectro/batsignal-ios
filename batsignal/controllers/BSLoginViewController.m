@@ -52,6 +52,8 @@
     [[BSSession defaultSession] getTwitterAccounts:^(NSArray *accounts, NSString *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.twitterAccounts = accounts;
+            
+            _actionSheet = nil;
             self.actionSheet = [self.actionSheet initWithTitle:@"Which account?" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
             
             for (ACAccount *account in self.twitterAccounts) {
